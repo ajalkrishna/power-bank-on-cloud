@@ -1,0 +1,18 @@
+.heading{
+    background-color: darkblue;
+    color: white;
+    width: 50%;
+}
+.increment::-webkit-inner-spin-button,
+.increment::-webkit-outer-spin-button{
+    opacity: 1;
+    font-size: 2rem;
+}
+
+input[type=date]{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-control,.form-select{
+    border-radius: 0;
+    box-shadow: none;
+}

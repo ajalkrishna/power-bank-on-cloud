@@ -1,0 +1,58 @@
+.heading {
+    background-color: rgb(36, 28, 117);
+    color: white;
+    padding: 5px 0px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.eachGenerator{
+    position: relative;
+    // border: 1px solid red;
+    p{
+        // font-weight: bold;
+        line-height: 0.1rem;
+        font-size: 0.7rem;
+    }
+    img,label{
+        z-index: -1;
+    }
+    .genName{
+        font-size: 0.8rem;
+    }
+}
+.eachGenerator:hover {
+    cursor: pointer;
+    transition: 0.2s all ease;
+    transform: scale(1.1);
+}
+.eachGenerator .pop-up{
+    display: none;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 7px;
+    border: 1px solid black;
+    position: absolute;
+    top: -60px;
+    right: -148px;
+}
+.eachGenerator:hover .pop-up{
+    display: block;
+}
+.template{
+    span{
+        color: darkblue;
+    }
+}
+.my-pagination::ng-deep .page-item .page-link {
+    color: #FFF;
+    background-color: rgb(49, 96, 98) !important;
+    font-size: 0.6rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0;
+    // display: block;
+    // margin: auto;
+}
+.my-pagination::ng-deep .page-item.active .page-link{
+    background-color: black !important;
+}

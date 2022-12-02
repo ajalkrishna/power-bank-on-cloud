@@ -1,0 +1,181 @@
+<!-- <h5 class="mx-auto text-center border p-2 heading">Create a New "Power Purchase Agreement (PPA)" ​</h5> -->
+<div class="container">
+    <form [formGroup]="newPpaRequest" (ngSubmit)="this.newPpaRequest.valid && submit(formRef)" #formRef="ngForm">
+        <!-- powergenerator -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="generatorName">Power Generator</label>
+                </div>
+                <div class="col-6">
+                    <select name="generatorName" id="generatorName" class="form-select w-50 rounded-pill"
+                        (input)="chooseGenerator($event)">
+                        <option value="Select" [selected]="selectStatus">Select...</option>
+                        <option *ngFor="let each of generators" [value]="each.generatorName">
+                            {{each.generatorName}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="generatorCode">Generator Code</label>
+                </div>
+                <div class="col-6">
+                    <div class="generator_code">
+                        <input type="text" id="generatorCode" class="form-control w-50 rounded-pill" [value]="codeOfGen"
+                            disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- typeofresource -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="typeOfResource">Type of renewable resource​</label>
+
+                </div>
+                <div class="col-6">
+                    <select name="typeOfResource" id="typeOfResource" class="form-select w-50 rounded-pill"
+                        (input)="chooseType($event)">
+                        <option [selected]="selectStatus">Select...</option>
+                        <option *ngFor="let type of typeOfResources" [value]="type">{{type}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- capacityRequested -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="capacityRequested">Capacity to be reserved under PPA (kW)​</label>
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="number" formControlName="capacityRequested" id="capacityRequested" min="10" max="1000"
+                        class="form-control w-50 rounded-pill">
+                    <div
+                        *ngIf='formRef.submitted || (capacityRequested.invalid && (capacityRequested.dirty || capacityRequested.touched))' class="errorMsg">
+                        <p class="text-danger" *ngIf='capacityRequested.errors?.["min"]'>*value should not be
+                            less that 10
+                        </p>
+                        <p class="text-danger" *ngIf='capacityRequested.errors?.["max"]'>*value should not be
+                            greater than 1000
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- startdate  -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="startDate">Commencement of Power from​</label>
+
+                </div>
+                <div class="col-6">
+                    <input type="date" formControlName="startDate" id="startDate" class="form-control w-50 rounded-pill"
+                        [min]="currentDate" [max]="startDate">
+                </div>
+            </div>
+            <!-- <div class="row border bg-light p-1 rounded-pill">
+                <div class="col-12">
+                    <div class="row startDateOfPpa">
+                        <div class="col-6">
+                            <label for="startDate">Commencement of Power from​</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="date" formControlName="startDate" id="startDate"
+                                class="form-control rounded-pill" [min]="currentDate" [max]="startDate">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- validity -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="validity">Validity of the PPA​​</label>
+
+                </div>
+                <div class="col-6">
+                    <input type="date" formControlName="validity" id="validity" class="form-control rounded-pill w-50"
+                        [min]="currentDate" [max]="endDate">
+                </div>
+            </div>
+            <!-- <div class="row border bg-light p-2 rounded-pill">
+                <div class="col-9">
+                    <div class="row validityOfpa">
+                        <div class="col-8">
+                        </div>
+                        <div class="col-4">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- cost -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="fixedCost">Fixed cost per kW (Capacity) in USD​​</label>
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="number" formControlName="fixedCost" id="fixedCost" min="1" max="20"
+                        class="form-control w-50 rounded-pill">
+                    <div *ngIf='formRef.submitted || (fixedCost.invalid && (fixedCost.dirty || fixedCost.touched))' class="errorMsg">
+                        <p class="text-danger" *ngIf='fixedCost.errors?.["min"]'>*value shouldn't be
+                            less that 1
+                        </p>
+                        <p class="text-danger" *ngIf='fixedCost.errors?.["max"]'>*value shouldn't be
+                            greater than 20
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-2">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="variableCost">Variable cost per unit (Operational)in USD​​</label>
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="number" formControlName="variableCost" id="variableCost" min="0.01" max="2" step="0.01"
+                        class="form-control w-50 rounded-pill">
+                    <div
+                        *ngIf='formRef.submitted || (variableCost.invalid && (variableCost.dirty || variableCost.touched))' class="errorMsg">
+                        <p class="text-danger" *ngIf='variableCost.errors?.["min"]'>*value shouldn't be
+                            less that 0.01
+                        </p>
+                        <p class="text-danger" *ngIf='variableCost.errors?.["max"]'>*value shouldn't be
+                            greater than 2
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- terms and condition -->
+        <div class="d-flex">
+            <input type="checkbox" name="confirm" id="confirm" class="form-check-input"
+                (input)="termsAndConditions($event)">
+            <label class="ms-2">I agree to the <a href="#confirm"> terms & condition</a>​</label>
+        </div>
+
+        <!-- submit Button -->
+        <button type="submit" class="btn btn-secondary d-block mx-auto" data-bs-toggle="modal"
+            data-bs-target="#ppa_confirm" [disabled]="this.newPpaRequest.invalid && this.checked">Request For
+            PPA</button>
+        <!-- <button type="submit" class="btn btn-secondary d-block mx-auto">Request For PPA</button> -->
+    </form>
+
+
+</div>

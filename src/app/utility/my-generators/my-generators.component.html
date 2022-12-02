@@ -1,0 +1,29 @@
+<h5 class="text-center heading mb-3">My Generators</h5>
+<div class="row row-cols-1 row-cols-lg-2 g-2">
+    <div class="col eachGenerator" *ngFor="let each of sortedGenerators">
+        <div class="d-flex align-items-center justify-content-center h-100">
+            <img src="../../assets/solar-panel.png" alt="no image found"
+                *ngIf="each.generatingSource=='Solar Photovoltaic'" width="40px">
+            <img src="../../assets/biogas-plant.png" alt="no image found"  width="40px" *ngIf="each.generatingSource=='Bio-Gas Generator'" class="me-1">
+            <img src="../../assets/wind-mill.png" alt="no image found"
+                *ngIf="each.generatingSource=='Wind Generator'" width="40px" class="me-1">
+            <label class="fw-bold genName">{{each.generatorName}}</label>
+            <div class="pop-up">
+                <div>
+                    <div class="template">
+                        <p><span>Generator Name : </span>{{each.generatorName}}</p>
+                        <p><span>Code : </span>{{each.generatorCode}}</p>
+                        <p><span>Source : </span>{{each.generatingSource}}</p>
+                        <p><span>Capacity: </span>{{each.generationCapacity}}kW</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-btn w-100 d-flex justify-content-end">
+        <pagination class="my-pagination" [totalItems]="availableGen.length" [directionLinks]="false" (pageChanged)="showMoreGenerators($event)"
+                    [itemsPerPage]="8"></pagination>
+    </div>
+    
+</div>
