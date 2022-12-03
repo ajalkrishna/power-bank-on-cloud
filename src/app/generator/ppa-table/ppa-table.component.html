@@ -1,0 +1,60 @@
+<div class="row mt-2">
+    <div class="col-6">
+        <h5 class="text-center heading">PPA- In Execution</h5>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">Contract ID</th>
+                    <th scope="col">Genarator</th>
+                    <th scope="col">Quantity(kW)</th>
+                    <!-- <th scope="col">Generation Source</th> -->
+                    <th scope="col">Timeline</th>
+                </tr>
+            </thead>
+            <tbody class="inExcecution">
+                <tr *ngFor="let each of executionArray">
+                    <td>{{each.contractId}}</td>
+                    <td>{{each.generatorName}}</td>
+                    <td>{{each.quantity}}</td>
+                    <!-- <td>{{each.generatingSource}}</td> -->
+                    <td>{{each.timeline}}</td>
+                </tr>
+                
+
+            </tbody>
+        </table>
+        <div class="page-btn w-100 d-flex justify-content-end">
+            <pagination class="my-pagination" [totalItems]="genInExecution.length" [directionLinks]="false"
+                    (pageChanged)="showMoreInExecution($event)" [itemsPerPage]="4"></pagination>
+        </div>
+    </div>
+    <div class="col-6">
+        <h5 class="text-center heading">PPA- Completed</h5>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Contract ID</th>
+                    <th scope="col">Genarator</th>
+                    <th scope="col">Quantity(kW)</th>
+                    <!-- <th scope="col">Generation Source</th> -->
+                    <th scope="col">Timeline</th>
+                </tr>
+            </thead>
+            <tbody class="">
+                <tr *ngFor="let each of completedReturned">
+                    <td>{{each.contractId}}</td>
+                    <td>{{each.generatorName}}</td>
+                    <td>{{each.quantity}}</td>
+                    <!-- <td>{{each.generationSource}}</td> -->
+                    <td>{{each.timeline}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="page-btn w-100 d-flex justify-content-end">
+
+            <pagination class="my-pagination" [totalItems]="completedGen.length" [directionLinks]="false"
+                (pageChanged)="showMore($event)" [itemsPerPage]="4"></pagination>
+        </div>
+    </div>
+</div>

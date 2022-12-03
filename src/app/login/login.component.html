@@ -1,1 +1,39 @@
-<p>login works!</p>
+<!-- <app-navbar></app-navbar> -->
+<div class="container">
+  <div class="row mt-5">
+    <div class="spContainer mx-auto">
+      <div class="card px-4 py-5 border-0 shadow">
+        <div class="d-inline text-left mb-3">
+          <h3 class="font-weight-bold text-center">Login</h3>
+          <h6 class="text-center">Use your valid credentials to login</h6>
+        </div>
+        <div class="d-inline text-center mb-3">
+          <div class="form-group mx-auto">
+            <input
+              class="form-control inpSp"
+              type="text"
+              placeholder="username"
+            />
+          </div>
+        </div>
+        <div class="d-inline text-center mb-3">
+          <div class="form-group mx-auto">
+            <input
+              class="form-control inpSp"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <div class="d-inline text-left mb-3">
+          <div class="form-group mx-auto">
+            <button class="btn btn-primary" (click)="onClick($event)">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->

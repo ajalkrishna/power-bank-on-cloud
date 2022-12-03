@@ -1,0 +1,40 @@
+<div class="modal fade" id="createPPA" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="createPPA" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex align-items-center mb-2">
+                    <h5 class="heading text-center">Create a New "Power Purchase Agreement (PPA)" ​
+                    </h5>
+
+                    <button type="button" class="btn-close d-block ms-auto" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <app-ppa-form></app-ppa-form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ppa_confirm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="pb_confirm" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close d-block ms-auto" data-bs-toggle="modal"
+                    data-bs-target="#createPPA" aria-label="Close"></button>
+                <div class="container">
+                    <p class="text-center">Dear User, A PPA request has been sent to <span
+                            class="fw-bold">{{this.util.newPpaRequest.getValue().generatorName}}</span> for
+                        a reserve capacity of <span class="fw-bold">
+                            {{this.util.newPpaRequest.getValue().capacityRequested}}kW </span>with a contract ID <input type="text" disabled value="7ec5e49a823eb2a5bf0cca2a">
+                    </p>
+
+                </div>
+                <button type="button" class="btn btn-secondary d-block mx-auto" data-bs-dismiss="modal">OK</button>
+
+            </div>
+        </div>
+    </div>
+</div>

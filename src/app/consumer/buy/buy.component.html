@@ -1,0 +1,67 @@
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+    <div class="navbar modal-header">
+    <h4  style="text-align:center;color: #fff;">Buy Power Bank</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" style="color: #fff;">&times;</span>
+      </button>
+    </div>
+    <form >
+    <table >
+        <tr >
+            <th>Number of Power Banks</th>
+            <td ><input class="arrows" type="number" name="points" step="" [(ngModel)]="quantity"></td>
+        </tr>
+        <tr>
+            <th>Capacity of Power Bank in kW</th>
+            <td><input type="number" name="capacity"  [(ngModel)]="capacity"></td>
+        </tr>
+        <tr>
+            <th>Type of Renewable Resource</th>
+            <td>
+                <select class="custom-select" name="types" id="types" style="border: 1px solid grey;">
+                    <option value="">Select..</option>
+                    <option value="saab">Solar Photovoltaic</option>
+                    <option value="opel">Wind Generator</option>
+                    <option value="audi">Bio-gas Generator</option>
+                  </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Cost of Power Bank in USD</th>
+            <td><input type="number" name="cost" [(ngModel)]="cost"></td>
+        </tr>
+        <tr>
+            <th>Timeline</th>
+            <td><input type="date" name="timeline" [(ngModel)]="timeline"></td>
+        </tr>
+    </table>
+    <div class="modal-footer" style="justify-content: center;">
+        <button type="submit" class="btn" data-dismiss="modal" style="background-color: #3d5fc6;color:#fff" data-toggle="modal" data-target="#confirmation-msg"(click)="confirmBuy()" >Buy</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </form>
+</div>
+</div>
+</div>
+
+
+
+    <div class="modal fade" id="confirmation-msg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class=" modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+<p style="text-align: center;padding: 10px;">
+    Dear User, A set of "<strong>{{quantity}}</strong>"  with a capacity of "<strong>{{capacity}} kW</strong>" has been added into your account with a Child contract ID" Generate child contract ID (2324-AA)"
+
+</p>
+<button type="button"  class="btn" data-dismiss="modal" style="margin: auto;margin-bottom: 10px;" (click)="eraseForm()" >OK</button>
+</div>
+
+</div>
+</div>

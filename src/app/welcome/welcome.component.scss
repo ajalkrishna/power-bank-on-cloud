@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.body {
+	// background-image: url('../../assets/images/MicrosoftTeams-image\ \(2\).png');
+	background-image: url('../../assets/images/pexels-narcisa-aciko-1292464.jpg');
+	// background-image: url('../../assets/images/welcom-bg.jpg');
+	background-size: cover;
+	min-height: 90.5vh;
+
+	.title_text {
+		font-family: 'Poppins', sans-serif;
+		font-weight: bold;
+		color: white;
+		font-size: 3rem;
+		line-height: 3.5rem;
+
+	}
+
+	#subtitle {
+		font-family: 'IBM Plex Sans', sans-serif;
+		padding: 0;
+		font-size: 1rem;
+	}
+	.cards-btn{
+		// height: 13rem;
+	}
+	h1{
+		color: white;
+		text-align: center;
+		font-size: 1.5rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+.img_place{
+	height: 9rem;
+	background-color: white;
+
+}
+.img_place_ut{
+	background-image: url('../../assets/images/utility-pop.png');
+	background-size: cover;
+}
+.img_place_gen{
+	background-image: url('../../assets/images/generator-pop.png');
+	background-size: cover;
+}
+.img_place_con{
+	background-image: url('../../assets/images/solar-pop.png');
+	background-size: cover;
+}
+.img_place_ret{
+	background-image: url('../../assets/images/retailer-pop.png');
+	background-size: cover;
+}
+.route:hover{
+	transition: all 0.2s ease-in;
+	transform: scale(1.08);
+	cursor: pointer;
+}
+.route:hover .img_place{
+	transition: all 0.2s ease-in;
+	height: 8rem;
+}
