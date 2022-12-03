@@ -1,78 +1,44 @@
-$color_1: #212519;
-$font-family_1: sans-serif;
-$font-family_2: "Times New Roman", Times, serif;
-$background-color_1: #ff425f;
-$background-color_2: #de2c48;
-$background-color_3: #ebebeb;
-$background-color_4: #dbdbdb;
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.login_page{
+	background-image: url('../../assets/images/login_image.jpg');
+	filter: contrast(80%);
+	background-size: cover;
+}
+.login_box{
+	min-height: 350px;
+	// background-color: #f8f9fa97;
+	background-color: #f8f9fa;
+}
+.row{
+	// height: 87.5vh;
+	padding: 1.5rem 0rem;
+}
+.login_title{
+	font-size: 2rem;
+	font-weight: bold;
+	color: darkblue;
+}
+.form-control{
+	padding: 0.5rem;
+	box-shadow: none;
+	border-radius: 0;
+}
+.login_btn{
+	background-color: darkblue;
+	color: white;
+	padding: 0.4rem 1.5rem;
+	box-shadow: 0px 5px 10px rgba(0, 0, 255, 0.614);
+}
+.login_btn:hover{
+	background-color: rgb(18, 18, 198);
+	transform: scale(1.03);
 
-body {
-	height: 100vh;
-	background: #e9eef7;
-	font-family: $font-family_1;
 }
-.spContainer {
-	width: 100%;
-	max-width: 380px;
-}
-.card {
-	border-radius: 8px;
-	transition: .25s;
-	&:hover {
-		transition: .25s;
-	}
-}
-.btn-primary {
-	border-radius: 4px;
-	border: none;
-	background-color: $background-color_1;
-	box-shadow: 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset, 0px -0.4em 0px 0px rgba(34, 36, 38, 0.15) inset;
-	&:hover {
-		background-color: $background-color_2 !important;
-		box-shadow: none;
-	}
-	&:focus {
-		background-color: $background-color_2 !important;
-		box-shadow: none;
-	}
-	&:active {
-		background-color: $background-color_2 !important;
-		box-shadow: none;
-	}
-}
-.inpSp {
-	background-color: $background-color_3;
-	border: none;
-	transition: .25s;
-	padding-left: 25px;
-	font-weight: light !important;
-	font-family: $font-family_2;
-	border-radius: 4px;
-	&:hover {
-		transition: .25s;
-		background-color: $background-color_4;
-	}
-	&:focus {
-		background-color: $background-color_3;
-		box-shadow: 0 8px 8px 0px #f1f1f1;
-	}
-}
-.regStr {
-	transition: .25s;
-	padding-bottom: 4px;
-	border-bottom: 2px solid gray;
-	color: $color_1;
-	&:hover {
-		border-bottom: 2px solid #ff425f;
-		padding-bottom: 8px;
-		transition: .25s;
-		text-decoration: none;
-		color: $color_1;
-	}
-}
-.btn-sm {
-	font-weight: 300;
-	&:hover {
-		font-weight: 900;
-	}
+.lead,.fst-italic{
+	font-size: 0.8rem;
+	cursor: pointer;
 }

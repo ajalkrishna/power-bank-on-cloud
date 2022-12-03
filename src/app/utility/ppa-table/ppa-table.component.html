@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody class="inExcecution">
-                <tr *ngFor="let each of executionArray">
+                <tr *ngFor="let each of executionArray" class="text-center">
                     <td>{{each.contractId}}</td>
                     <td>{{each.generatorName}}</td>
                     <td>{{each.quantity}}</td>
@@ -32,7 +32,7 @@
         <h5 class="text-center heading">PPA- Completed</h5>
         <table class="table table-bordered table-striped">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th scope="col">Contract ID</th>
                     <th scope="col">Genarator</th>
                     <th scope="col">Quantity(kW)</th>
@@ -41,7 +41,7 @@
                 </tr>
             </thead>
             <tbody class="">
-                <tr *ngFor="let each of completedReturned">
+                <tr *ngFor="let each of completedReturned" class="text-center">
                     <td>{{each.contractId}}</td>
                     <td>{{each.generatorName}}</td>
                     <td>{{each.quantity}}</td>

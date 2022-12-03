@@ -1,39 +1,25 @@
-<!-- <app-navbar></app-navbar> -->
-<div class="container">
-  <div class="row mt-5">
-    <div class="spContainer mx-auto">
-      <div class="card px-4 py-5 border-0 shadow">
-        <div class="d-inline text-left mb-3">
-          <h3 class="font-weight-bold text-center">Login</h3>
-          <h6 class="text-center">Use your valid credentials to login</h6>
+<app-navbar></app-navbar>
+<div class="login_page">
+  <div class="container mx-auto">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-4 login_box">
+        <div class="mb-3 text-center">
+          <h5 class="login_title pt-4">Sign in</h5>
+          <p>Use your valid credentials to login</p>
         </div>
-        <div class="d-inline text-center mb-3">
-          <div class="form-group mx-auto">
-            <input
-              class="form-control inpSp"
-              type="text"
-              placeholder="username"
-            />
-          </div>
+        <div class="mb-1 p-4">
+          <input type="text" name="username" id="username" placeholder="Email or phone or User ID ​" class="form-control" autocomplete="off">
+          <p class="text-primary fst-italic">Forgot email?</p>
         </div>
-        <div class="d-inline text-center mb-3">
-          <div class="form-group mx-auto">
-            <input
-              class="form-control inpSp"
-              type="password"
-              placeholder="Password"
-            />
-          </div>
+        <div class="mb-3 ps-4 pe-4">
+          <input type="password" name="password" id="password" placeholder="Password​" class="form-control">
+          <p class="text-primary fst-italic">Reset password​?</p>
         </div>
-        <div class="d-inline text-left mb-3">
-          <div class="form-group mx-auto">
-            <button class="btn btn-primary" (click)="onClick($event)">
-              Login
-            </button>
-          </div>
+        <div class="mb-5">
+          <button class="btn login_btn d-block mx-auto" routerLink="/utility">Login</button>
+          <p class="text-center mt-2 lead">CREATE ACCOUNT</p>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- <app-footer></app-footer> -->

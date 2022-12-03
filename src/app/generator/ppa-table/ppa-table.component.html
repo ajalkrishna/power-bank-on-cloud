@@ -5,18 +5,16 @@
             <thead>
                 <tr class="text-center">
                     <th scope="col">Contract ID</th>
-                    <th scope="col">Genarator</th>
+                    <th scope="col">Retailer</th>
                     <th scope="col">Quantity(kW)</th>
-                    <!-- <th scope="col">Generation Source</th> -->
                     <th scope="col">Timeline</th>
                 </tr>
             </thead>
             <tbody class="inExcecution">
-                <tr *ngFor="let each of executionArray">
+                <tr *ngFor="let each of executionArray" class="text-center">
                     <td>{{each.contractId}}</td>
-                    <td>{{each.generatorName}}</td>
+                    <td>{{each.retailer}}</td>
                     <td>{{each.quantity}}</td>
-                    <!-- <td>{{each.generatingSource}}</td> -->
                     <td>{{each.timeline}}</td>
                 </tr>
                 
@@ -32,20 +30,18 @@
         <h5 class="text-center heading">PPA- Completed</h5>
         <table class="table table-bordered table-striped">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th scope="col">Contract ID</th>
-                    <th scope="col">Genarator</th>
+                    <th scope="col">Retailer</th>
                     <th scope="col">Quantity(kW)</th>
-                    <!-- <th scope="col">Generation Source</th> -->
                     <th scope="col">Timeline</th>
                 </tr>
             </thead>
             <tbody class="">
-                <tr *ngFor="let each of completedReturned">
+                <tr *ngFor="let each of completedReturned" class="text-center">
                     <td>{{each.contractId}}</td>
-                    <td>{{each.generatorName}}</td>
+                    <td>{{each.retailer}}</td>
                     <td>{{each.quantity}}</td>
-                    <!-- <td>{{each.generationSource}}</td> -->
                     <td>{{each.timeline}}</td>
                 </tr>
 
