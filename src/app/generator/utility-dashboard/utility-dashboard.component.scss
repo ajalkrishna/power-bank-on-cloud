@@ -162,3 +162,11 @@ slide {
 
     }
 }
+.ppa_approve{
+    position: relative;
+    .warning{
+        position: absolute;
+        top: 16px;
+        right: 22px;
+    }
+}

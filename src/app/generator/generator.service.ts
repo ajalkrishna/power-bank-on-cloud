@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneratorService {
+
 
   utilityInExecution:any[]=[
     {
@@ -159,6 +161,8 @@ export class GeneratorService {
       pricePerkw: 1.2
     }
   ]
+  ppaExecution = new BehaviorSubject(this.utilityInExecution);
+
 
   constructor() { }
 }

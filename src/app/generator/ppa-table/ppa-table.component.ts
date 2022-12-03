@@ -11,9 +11,7 @@ import { GeneratorService } from '../generator.service';
 })
 export class PpaTableComponent implements OnInit {
 
-  genInExecution:any;
   utilityInExecution:any;
-  completedGen:any;
   completedUtility:any;
   executionArray:any[];
   completedReturned:any[]
@@ -22,9 +20,7 @@ export class PpaTableComponent implements OnInit {
   constructor(private util:UtilityService,private gen:GeneratorService) { }
 
   ngOnInit(): void {
-    this.genInExecution=this.util.getGeneratorsInExcecution()
-    this.utilityInExecution=this.gen.utilityInExecution;
-    this.completedGen = this.util.getExcecutionCompletedGenerators()
+    this.utilityInExecution=this.gen.ppaExecution.getValue();
     this.completedUtility=this.gen.utilityExecutionCompleted;
     this.executionArray = this.utilityInExecution.slice(0, 4);
     this.completedReturned =this.completedUtility.slice(0,4);
@@ -38,7 +34,6 @@ export class PpaTableComponent implements OnInit {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
     this.completedReturned = this.completedUtility.slice(startItem, endItem);
-    // console.log(this.completedReturned);
     
   }
 }

@@ -11,7 +11,17 @@ export class UtilityService {
   yetToListOnCloud = new BehaviorSubject(267)
   newPpaRequest = new BehaviorSubject({
     generatorName: '',
-    capacityRequested:''
+    generatorCode:'',
+    generatingSource:'',
+    utilityName:'',
+    utilityId:'',
+    capacityRequested:0,
+    startDate:'',
+    validity:'',
+    fixedCost:0,
+    variableCost:0,
+    requestDate:'',
+    status:''
   })
   newPbSpecification = new BehaviorSubject({
     contractId:'',
@@ -100,14 +110,17 @@ export class UtilityService {
       generatorName: "Generator 3",
       quantity: 750,
       generatingSource: "Solar Photovoltaic",
-      timeline: "15 Nov 2022 to 29 Feb 2023"
+      timeline: "15 Nov 2022 to 29 Feb 2023",
+      status:'approved'
     },
     {
       contractId: 1789,
       generatorName: "Generator 5",
       quantity: 550,
       generatingSource: "Bio-Gas Generator",
-      timeline: "30 Nov 2022 to 16 Jan 2023"
+      timeline: "30 Nov 2022 to 16 Jan 2023",
+      status:'approved'
+
     },
     {
       contractId: 1678,
@@ -219,5 +232,13 @@ export class UtilityService {
   }
   getTypeOfResources(){
     return this.typeOfResources
+  }
+  updateInExcecutionTable(newPpa){
+    console.log("inside methode");
+    console.log(newPpa);
+    
+    
+    this.inExcecutionGenerators.unshift(newPpa)
+    // this.availableGenerators.unshift(newPpa)
   }
 }

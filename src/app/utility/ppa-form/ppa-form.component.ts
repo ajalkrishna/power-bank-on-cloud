@@ -57,6 +57,7 @@ export class PpaFormComponent implements OnInit {
     response.generatorCode=this.chosenGenerator.generatorCode;
     response.generatingSource=this.chosenGenerator.generatingSource;
     response.requestDate=this.currentDate;
+    response.status='requested';
     this.util.newPpaRequest.next(response)
     this.codeOfGen=''
     // formRef.reset()
@@ -64,7 +65,26 @@ export class PpaFormComponent implements OnInit {
     this.checked=false;
     console.log(response);
     
+
+    
   }
+  // demo(){
+  //   let demo={
+  //   generatorName: 'Generator X',
+  //   generatorCode:'4567',
+  //   generatingSource:'Solar Photovoltaic',
+  //   utilityName:'Utility C',
+  //   utilityId:'UTC3',
+  //   capacityRequested:500,
+  //   startDate:'12/17/2022',
+  //   validity:'01/01/2023',
+  //   fixedCost:5,
+  //   variableCost:0.05,
+  //   requestDate:'12/3/2022',
+  //   status:'requested'
+  //   }
+  //   this.util.newPpaRequest.next(demo)
+  // }
 
   chooseGenerator(e) {
     // console.log(e.target.value);

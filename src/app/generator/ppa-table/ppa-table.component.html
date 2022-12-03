@@ -22,7 +22,7 @@
             </tbody>
         </table>
         <div class="page-btn w-100 d-flex justify-content-end">
-            <pagination class="my-pagination" [totalItems]="genInExecution.length" [directionLinks]="false"
+            <pagination class="my-pagination" [totalItems]="utilityInExecution.length" [directionLinks]="false"
                     (pageChanged)="showMoreInExecution($event)" [itemsPerPage]="4"></pagination>
         </div>
     </div>
@@ -49,7 +49,7 @@
         </table>
         <div class="page-btn w-100 d-flex justify-content-end">
 
-            <pagination class="my-pagination" [totalItems]="completedGen.length" [directionLinks]="false"
+            <pagination class="my-pagination" [totalItems]="completedUtility.length" [directionLinks]="false"
                 (pageChanged)="showMore($event)" [itemsPerPage]="4"></pagination>
         </div>
     </div>
