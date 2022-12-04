@@ -15,7 +15,7 @@ export class MyGeneratorsComponent implements OnInit {
 
   ngOnInit(): void {
     this.availableUtility=this.gen.utilityData;
-    this.sortedUtilities = this.availableUtility.slice(0, 6);
+    this.sortedUtilities = this.availableUtility.slice(0, 4);
   }
 
   showMoreGenerators(event: PageChangedEvent){

@@ -71,6 +71,11 @@ export class PbFormComponent implements OnInit {
   }
   chooseGenerator(e) {
     let keyword = e.target.value;
+    if(keyword=='Select'){
+      this.genQty=0;
+      this.contractId=null;
+      return;
+    }
     this.chosenGenerator = this.genInExecution.find((gen) => gen.generatorName == keyword)
     this.contractId = this.chosenGenerator.contractId;
     this.genQty = this.chosenGenerator.quantity;
@@ -79,6 +84,7 @@ export class PbFormComponent implements OnInit {
       wind: 0,
       bio: 0
     }
+    
     this.chosenCapacity = null;
   }
   chooseCapacity(e) {

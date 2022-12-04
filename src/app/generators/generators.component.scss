@@ -1,0 +1,97 @@
+.container-body{
+    margin: 30px;
+}
+
+.third{
+    padding: 25px;
+    padding-top: 50px;
+}
+
+td{
+    text-align: center;
+    font-size: small;
+    font-weight: 600;
+}
+
+th{
+    font-size: small;
+    font-weight: 600;
+}
+
+.td-soler-img{
+    width: 24px;
+}
+
+.third .card{
+    margin: 9px;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    .card-body{
+        p{
+            font-size: small;
+            font-weight: 600;
+        }
+        .ppa-icon{
+            width: 57px;
+        }
+        text-align: center;
+    }
+}
+
+.retailer{
+    margin: 9px;
+    row{
+        
+        border: none;
+    }
+    img{
+        width: 30px;
+        padding-top: 10px;
+    }
+    p{
+        font-size: small;
+        font-weight: 600;
+        margin-top: 14px;
+    }
+    .undercol{
+        text-align: center;
+    }
+}
+
+// .colortext{
+//     color: green;
+// }
+h4, h5{
+    color: green;
+    margin: 10 px;
+}
+
+.util{
+    padding-top: 81px;
+    padding-bottom: 10px;
+}
+
+.round-noti{
+    position: absolute;
+    top: -6px;
+    right: -7px;
+    font-size: 12px;
+}
+
+.third thead th { background:rgb(37, 37, 243); color:white}
+// tbody th { background: lightgrey; color:red}
+
+.btn:hover {
+	box-shadow: 0 0 20px rgba(33,33,33,.2); 
+    background-color: blue;
+    color: white;
+}
+
+.third{
+    padding-top: 150px !important;
+    
+}
+
+.completed, .execution{
+    border: 10px;
+}

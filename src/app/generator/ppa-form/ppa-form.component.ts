@@ -20,7 +20,6 @@ export class PpaFormComponent implements OnInit {
   startDate:string="2027-12-31";
   endDate:string="2033-12-31"
   selectStatus:boolean=true;
-  checked:boolean=false;
 
 
 
@@ -51,8 +50,8 @@ export class PpaFormComponent implements OnInit {
   submit(formRef) {
   
     let response = this.newPpaRequest.value;
-    response.utilityName="Utility C";
-    response.utilityId = "4CD5";
+    response.utilityName="Genarator 3";
+    response.utilityId = "ME88";
     response.generatorName=this.chosenGenerator.generatorName;
     response.generatorCode=this.chosenGenerator.generatorCode;
     response.generatingSource=this.chosenGenerator.generatingSource;
@@ -61,8 +60,6 @@ export class PpaFormComponent implements OnInit {
     this.codeOfGen=''
     // formRef.reset()
     this.newPpaRequest.reset()
-    this.checked=false;
-    console.log(response);
     
   }
 
@@ -99,12 +96,6 @@ export class PpaFormComponent implements OnInit {
 
   findChosenGenerator(code){
     return this.generators.find((gen)=>gen.generatorCode==code)
-  }
-  termsAndConditions(e){
-    this.checked=e.target.checked;
-    console.log(this.checked);
-    
-    
   }
 
 }

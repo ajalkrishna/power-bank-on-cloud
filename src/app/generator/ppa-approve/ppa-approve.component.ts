@@ -12,18 +12,19 @@ export class PpaApproveComponent implements OnInit {
   ppaRequest:any;
   initial:any={
     generatorName: '',
-    generatorCode:'',
-    generatingSource:'',
-    utilityName:'',
-    utilityId:'',
-    capacityRequested:'',
-    startDate:'',
-    validity:'',
-    fixedCost:'',
-    variableCost:'',
-    requestDate:'',
-    status:''
+    generatorCode: '',
+    generatingSource: '',
+    utilityName: '',
+    utilityId: '',
+    capacityRequested: 0,
+    startDate: '',
+    validity: '',
+    fixedCost: 0,
+    variableCost: 0,
+    requestDate: '',
+    status: ''
   }
+  
   ngOnInit(): void {
     this.ppaRequest=this.util.newPpaRequest.getValue();
     console.log(this.ppaRequest);
@@ -41,7 +42,9 @@ export class PpaApproveComponent implements OnInit {
       status:'approved'
     }
     this.util.newPpaRequest.next(this.initial);
+    this.util.newContract.next(contract)
     this.util.updateInExcecutionTable(contract)
+    this.ppaRequest=this.initial;
   }
 
   

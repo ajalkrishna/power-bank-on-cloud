@@ -49,7 +49,8 @@ export class PpaFormComponent implements OnInit {
   get fixedCost() { return this.newPpaRequest.get('fixedCost') }
   get variableCost() { return this.newPpaRequest.get('variableCost') }
   submit(formRef) {
-  
+    console.log("inside ppa");
+    
     let response = this.newPpaRequest.value;
     response.utilityName="Utility C";
     response.utilityId = "4CD5";
@@ -64,6 +65,8 @@ export class PpaFormComponent implements OnInit {
     this.newPpaRequest.reset()
     this.checked=false;
     console.log(response);
+    console.log(this.util.newPpaRequest.getValue());
+    
     
 
     

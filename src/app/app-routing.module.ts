@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GeneratorsComponent } from './generators/generators.component';
 import { LoginComponent } from './login/login.component';
 import { TradingComponent } from './trading/trading.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'generator', loadChildren: () => import('./generator/generator.module').then(m => m.GeneratorModule) },
   { path: 'retailer', loadChildren: () => import('./retailer/retailer.module').then(m => m.RetailerModule) },
   {path:'trading',component:TradingComponent},
+  {path:'test',component:GeneratorsComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
 ];
 

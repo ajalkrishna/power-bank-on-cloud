@@ -11,25 +11,33 @@ export class UtilityService {
   yetToListOnCloud = new BehaviorSubject(267)
   newPpaRequest = new BehaviorSubject({
     generatorName: '',
-    generatorCode:'',
-    generatingSource:'',
-    utilityName:'',
-    utilityId:'',
-    capacityRequested:0,
-    startDate:'',
-    validity:'',
-    fixedCost:0,
-    variableCost:0,
-    requestDate:'',
-    status:''
+    generatorCode: '',
+    generatingSource: '',
+    utilityName: '',
+    utilityId: '',
+    capacityRequested: 0,
+    startDate: '',
+    validity: '',
+    fixedCost: 0,
+    variableCost: 0,
+    requestDate: '',
+    status: ''
   })
   newPbSpecification = new BehaviorSubject({
-    contractId:'',
-    qtyOfPowebank:'',
-    chosenCapacity:''
+    contractId: '',
+    qtyOfPowebank: '',
+    chosenCapacity: ''
+  })
+  newContract = new BehaviorSubject({
+    contractId: 0,
+    generatorName: "",
+    quantity: 0,
+    generatingSource: "",
+    timeline: "",
+    status: ''
   })
 
-  availableGenerators:any[]=[
+  availableGenerators: any[] = [
     {
       generatorName: "Generator 1",
       generatorCode: "ME50",
@@ -104,14 +112,14 @@ export class UtilityService {
     }
   ]
 
-  inExcecutionGenerators:any[]=[
+  inExcecutionGenerators: any[] = [
     {
       contractId: 1134,
       generatorName: "Generator 3",
       quantity: 750,
       generatingSource: "Solar Photovoltaic",
       timeline: "15 Nov 2022 to 29 Feb 2023",
-      status:'approved'
+      status: 'approved'
     },
     {
       contractId: 1789,
@@ -119,7 +127,6 @@ export class UtilityService {
       quantity: 550,
       generatingSource: "Bio-Gas Generator",
       timeline: "30 Nov 2022 to 16 Jan 2023",
-      status:'approved'
 
     },
     {
@@ -159,7 +166,7 @@ export class UtilityService {
     }
   ]
 
-  excecutionCompletedGenerators:any[]=[
+  excecutionCompletedGenerators: any[] = [
     {
       contractId: 784,
       generatorName: "Generator 11",
@@ -211,33 +218,33 @@ export class UtilityService {
     }
   ]
 
-  typeOfResources:any[]=["Solar Photovoltaic","Wind Generator","Bio-Gas Generator"]
+  typeOfResources: any[] = ["Solar Photovoltaic", "Wind Generator", "Bio-Gas Generator"]
 
   constructor() { }
 
-  getLastPpaRequest(){
+  getLastPpaRequest() {
     return this.ppaRequest;
   }
 
-  getAvailableGenerators(){
+  getAvailableGenerators() {
     return this.availableGenerators;
   }
 
-  getGeneratorsInExcecution(){
+  getGeneratorsInExcecution() {
     return this.inExcecutionGenerators;
   }
 
-  getExcecutionCompletedGenerators(){
+  getExcecutionCompletedGenerators() {
     return this.excecutionCompletedGenerators
   }
-  getTypeOfResources(){
+  getTypeOfResources() {
     return this.typeOfResources
   }
-  updateInExcecutionTable(newPpa){
+  updateInExcecutionTable(newPpa) {
     console.log("inside methode");
     console.log(newPpa);
-    
-    
+
+
     this.inExcecutionGenerators.unshift(newPpa)
     // this.availableGenerators.unshift(newPpa)
   }

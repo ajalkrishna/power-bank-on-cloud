@@ -1,11 +1,71 @@
 <app-navbar></app-navbar>
 <div class="utility">
     <div class="row mb-4 mt-3">
-        <div class="col-3 ">
-            <div class="row pb_stat pb_statistics justify-content-center ps-3 pe-3">
-                <h5 class="text-center mb-2 heading">My Capacity</h5>
+        <div class="col-3">
+            <h5 class="text-center heading">My Capacity</h5>
 
-                <div class="row box"></div>
+            <div class="row pb_stat justify-content-center ps-3 pe-3 ">
+                <div class="col">
+                    <div class="row capacity_box align-items-center mb-2">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-7 h6 cTag">
+                                    Installed Capacity
+                                </div>
+                                <div class="col-5 cBody">
+                                    10MW
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-7 h6 cTag ">
+                                    Availability Factor
+                                </div>
+                                <div class="col-5 cBody">
+                                    ~ 7.8MW
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr class="border m-1 p-0">
+
+                    </div>
+
+                    <div class="row box align-items-center mb-2">
+                        <div class="col-3 circle">
+                            <img src="../../assets/solar-panel.png" alt="no image found" width="35px" class=" mb-1">
+                        </div>
+                        <div class="col-9 ps-3 pt-2 pe-2">
+                            <h5>Site 1</h5>
+                            <h6>Installed Capacity: 5MW</h6>
+                            <h6>Availability Factor: 4.2MW</h6>
+                        </div>
+                    </div>
+
+                    <div class="row box align-items-center mb-2">
+                        <div class="col-3 circle">
+                            <img src="../../assets/solar-panel.png" alt="no image found" width="35px" class=" mb-1">
+                        </div>
+                        <div class="col-9 ps-3 pt-2 pe-2">
+                            <h5>Site 2</h5>
+                            <h6>Installed Capacity: 2.5MW</h6>
+                            <h6>Availability Factor: 1.8MW</h6>
+                        </div>
+                    </div>
+
+                    <div class="row box align-items-center mb-2">
+                        <div class="col-3 circle">
+                            <img src="../../assets/solar-panel.png" alt="no image found" width="35px" class=" mb-1">
+                        </div>
+                        <div class="col-9 ps-3 pt-2 pe-2">
+                            <h5>Site 3</h5>
+                            <h6>Installed Capacity: 2.5MW</h6>
+                            <h6>Availability Factor: 1.8MW</h6>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
             </div>
@@ -17,19 +77,9 @@
         <div class="col-9">
             <div class="row revenue">
                 <div class="col-5">
-                    <h5 class="text-center heading">Load Management for EV (MW) 2022</h5>
-                    <!-- <carousel [noWrap]="true" [showIndicators]="false" class="w-100">
-                        <slide *ngFor="let slide of slides">
-                            <img [src]="slide.image" alt="image not found" class="w-100">
-                        </slide>
-                    </carousel> -->
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <h5 class="text-center heading">Market Summary</h5>
+                    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <!-- <div *ngFor="let slide of slides">
-                                <div class="carousel-item">
-                                    <img [src]="slide.image" alt="image not found" class="w-100 carousel-item">
-                                </div>
-                            </div> -->
                             <div class="carousel-item" data-bs-interval="10000">
                                 <img src="../../assets/t1.png" class="d-block w-100" alt="...">
                             </div>
@@ -42,20 +92,21 @@
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="prev">
-                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                             <span><img src="../../assets/left-arrow.png" width="25px" alt=""></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                             data-bs-slide="next">
-                            <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                             <span><img src="../../assets/right-arrow.png" alt="" width="25px"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
+                    </div> -->
+                    <!-- <div id="chartContainer" class="w-100"></div> -->
+                    <img src="../../../assets/images/market-curve.png" class="w-100" alt="">
+
                 </div>
                 <div class="col-5">
-                    <h5 class="text-center heading">Revenue (USD) for 2022</h5>
+                    <!-- <h5 class="text-center heading">Revenue (USD) for 2022</h5>
                     <div class="bar-template">
                         <div class="revenue-q1">
                             <p>2985</p>
@@ -81,7 +132,8 @@
                             <hr>
                             <h6 class="base">Quarter 4</h6>
                         </div>
-                    </div>
+                    </div> -->
+                    <app-current-market></app-current-market>
                 </div>
                 <div class="col-2">
                     <div class="row">
@@ -96,33 +148,24 @@
                     <div class="row">
                         <div class="col ppa_approve">
                             <img src="../../../assets/images/rpa.svg" alt="" data-bs-toggle="modal" class="w-100"
-                            data-bs-target="#create_power_bank">
-                            <img *ngIf="this.util.newPpaRequest.getValue().utilityName!=''" src="../../../assets/images/warning.png" alt="" class="warning" width="20px" height="20px">
+                                data-bs-target="#create_power_bank">
+                            <img *ngIf="this.util.newPpaRequest.getValue().status=='requested'"
+                                src="../../../assets/images/warning.png" alt="" class="warning" width="20px"
+                                height="20px">
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
-            <!-- <div class="row"> -->
             <app-ppa-table></app-ppa-table>
-
-            <!-- </div> -->
-            <!-- <div class="row mt-3">
-                <h5 class="text-center heading">Load Management for EV (MW) 2022</h5>
-                <carousel [noWrap]="true" [showIndicators]="false" class="border">
-                    <slide *ngFor="let slide of slides">
-                        <img [src]="slide.image" alt="image not found" class="d-block mx-auto">
-                    </slide>
-                </carousel>
-            </div> -->
-            <!-- <app-ppa-table></app-ppa-table> -->
 
 
         </div>
 
     </div>
 
+    <!-- <div id="chartContainer" style="height: 30px;"></div> -->
 
 
 

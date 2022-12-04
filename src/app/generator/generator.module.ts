@@ -14,6 +14,7 @@ import { CreatePpaComponent } from './create-ppa/create-ppa.component';
 import { MyGeneratorsComponent } from './my-generators/my-generators.component';
 import { UtilityDashboardComponent } from './utility-dashboard/utility-dashboard.component';
 import { PpaApproveComponent } from './ppa-approve/ppa-approve.component';
+import { CurrentMarketComponent } from './current-market/current-market.component';
 
 
 
@@ -28,7 +29,8 @@ import { PpaApproveComponent } from './ppa-approve/ppa-approve.component';
     CreatePpaComponent,
     MyGeneratorsComponent,
     UtilityDashboardComponent,
-    PpaApproveComponent
+    PpaApproveComponent,
+    CurrentMarketComponent
   ],
   imports: [
     CommonModule,

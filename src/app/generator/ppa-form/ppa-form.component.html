@@ -165,14 +165,13 @@
 
         <!-- terms and condition -->
         <div class="d-flex">
-            <input type="checkbox" name="confirm" id="confirm" class="form-check-input"
-                (input)="termsAndConditions($event)">
+            <input type="checkbox" name="confirm" id="confirm" class="form-check-input">
             <label class="ms-2">I agree to the <a href="#confirm"> terms & condition</a>​</label>
         </div>
 
         <!-- submit Button -->
-        <button type="submit" class="btn btn-secondary d-block mx-auto" data-bs-toggle="modal"
-            data-bs-target="#ppa_confirm" [disabled]="this.newPpaRequest.invalid && this.checked">Request For
+        <button type="submit" class="btn d-block mx-auto" data-bs-toggle="modal"
+            data-bs-target="#ppa_confirm" [disabled]="this.newPpaRequest.invalid">Request For
             PPA</button>
         <!-- <button type="submit" class="btn btn-secondary d-block mx-auto">Request For PPA</button> -->
     </form>

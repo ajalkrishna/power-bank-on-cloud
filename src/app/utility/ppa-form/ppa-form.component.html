@@ -57,8 +57,8 @@
                 <div class="col-6 d-flex">
                     <input type="number" formControlName="capacityRequested" id="capacityRequested" min="10" max="1000"
                         class="form-control w-50 rounded-pill">
-                    <div
-                        *ngIf='formRef.submitted || (capacityRequested.invalid && (capacityRequested.dirty || capacityRequested.touched))' class="errorMsg">
+                    <div *ngIf='formRef.submitted || (capacityRequested.invalid && (capacityRequested.dirty || capacityRequested.touched))'
+                        class="errorMsg">
                         <p class="text-danger" *ngIf='capacityRequested.errors?.["min"]'>*value should not be
                             less that 10
                         </p>
@@ -131,7 +131,8 @@
                 <div class="col-6 d-flex">
                     <input type="number" formControlName="fixedCost" id="fixedCost" min="1" max="20"
                         class="form-control w-50 rounded-pill">
-                    <div *ngIf='formRef.submitted || (fixedCost.invalid && (fixedCost.dirty || fixedCost.touched))' class="errorMsg">
+                    <div *ngIf='formRef.submitted || (fixedCost.invalid && (fixedCost.dirty || fixedCost.touched))'
+                        class="errorMsg">
                         <p class="text-danger" *ngIf='fixedCost.errors?.["min"]'>*value shouldn't be
                             less that 1
                         </p>
@@ -150,8 +151,8 @@
                 <div class="col-6 d-flex">
                     <input type="number" formControlName="variableCost" id="variableCost" min="0.01" max="2" step="0.01"
                         class="form-control w-50 rounded-pill">
-                    <div
-                        *ngIf='formRef.submitted || (variableCost.invalid && (variableCost.dirty || variableCost.touched))' class="errorMsg">
+                    <div *ngIf='formRef.submitted || (variableCost.invalid && (variableCost.dirty || variableCost.touched))'
+                        class="errorMsg">
                         <p class="text-danger" *ngIf='variableCost.errors?.["min"]'>*value shouldn't be
                             less that 0.01
                         </p>
@@ -167,15 +168,18 @@
         <div class="d-flex">
             <input type="checkbox" name="confirm" id="confirm" class="form-check-input"
                 (input)="termsAndConditions($event)">
-            <label class="ms-2">I agree to the <a href="#confirm"> terms & condition</a>​</label>
+            <label class="ms-2">I agree to the <a> terms & condition</a>​</label>
         </div>
+        
 
         <!-- submit Button -->
         <!-- <button type="submit" class="btn btn-secondary d-block mx-auto" data-bs-toggle="modal"
             data-bs-target="#ppa_confirm" [disabled]="this.newPpaRequest.invalid && this.checked">Request For
             PPA</button> -->
-            <img src="../../../assets/images/rppa.svg" type="submit" role="button" alt="" class="d-block mx-auto" width="200px" data-bs-toggle="modal"
-            data-bs-target="#ppa_confirm">
+        <!-- <img src="../../../assets/images/rppa.svg" type="submit" role="button" alt="" class="d-block mx-auto" width="200px" data-bs-toggle="modal"
+            data-bs-target="#ppa_confirm"> -->
+        <button type="submit" class="d-block mx-auto"><img src="../../../assets/images/rppa.svg" type="submit"
+                role="button" alt="" width="200px" data-bs-toggle="modal" data-bs-target="#ppa_confirm"></button>
         <!-- <button type="button" data-bs-toggle="modal"
         data-bs-target="#ppa_confirm" class="btn btn-secondary d-block mx-auto">Request For PPA</button> -->
     </form>
