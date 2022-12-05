@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 
 import { ConsumerRoutingModule } from './consumer-routing.module';
 import { ConsumerComponent } from './consumer.component';
@@ -22,7 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CommonModule,
     ConsumerRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PaginationModule.forRoot()
   
   ]
 })

@@ -1,0 +1,107 @@
+<!-- <h5 class="mx-auto text-center border p-2 heading">Create a New "Power Purchase Agreement (PPA)" ​</h5> -->
+<div class="container">
+    <form>
+        <!-- powergenerator -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="generatorName">Generator Name</label>
+                </div>
+                <div class="col-6">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.generatorName">
+                </div>
+            </div>
+        </div>
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="generatorCode">Generator Code</label>
+                </div>
+                <div class="col-6">
+                    <div class="generator_code">
+                        <input type="text" id="generatorCode" class="form-control w-50 rounded-pill" 
+                            disabled [value]="ppaRequest.generatorCode">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- typeofresource -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="typeOfResource">Type of renewable resource​</label>
+
+                </div>
+                <div class="col-6">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.generatingSource">
+                </div>
+            </div>
+        </div>
+
+        <!-- capacityRequested -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="capacityRequested">Capacity to be reserved under PPA (kW)​</label>
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.capacityRequested">
+                </div>
+            </div>
+        </div>
+
+        <!-- startdate  -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="startDate">Commencement of Power from​</label>
+
+                </div>
+                <div class="col-6">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.startDate">
+                </div>
+            </div>
+        </div>
+
+        <!-- validity -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="validity">Validity of the PPA​​</label>
+                </div>
+                <div class="col-6">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.validity">
+                </div>
+            </div>
+        </div>
+
+        <!-- cost -->
+        <div class="mb-1">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="fixedCost">Fixed cost per kW (Capacity) in USD​​</label>
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.fixedCost">
+                </div>
+            </div>
+        </div>
+        <div class="mb-2">
+            <div class="row border bg-light p-2 rounded-pill align-items-center">
+                <div class="col-6">
+                    <label for="variableCost">Variable cost per unit (Operational)in USD​​</label>
+                </div>
+                <div class="col-6 d-flex">
+                    <input type="text" disabled class="form-control w-50 rounded-pill" [value]="ppaRequest.variableCost">
+                </div>
+            </div>
+        </div>
+
+        <!-- submit Button -->
+        <button type="submit" class="btn mb-3 d-block mx-auto" data-bs-dismiss="modal" (click)="approvePpa()" >Approve</button>
+        <!-- <button type="submit" class="btn btn-secondary d-block mx-auto">Request For PPA</button> -->
+    </form>
+
+
+</div>

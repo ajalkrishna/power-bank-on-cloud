@@ -1,428 +1,326 @@
 <app-navbar></app-navbar>
-<div class="consumer_page mt-2">
+<div class="customer-page mt-2">
   <div class="grid box">
     <div class="row">
-      <div class="col-8 box1" >
-<div class="grid ">
-  <div class="row">
-  <div class="col-6" style=" border-right:1px dotted #330ae1 ;
-  height: auto;">
-    <h5 style="text-align: center;font-weight: bold;">MY POWER BANKS</h5>
-        <div class=" box1-sub-box1 box1-flex">
-            <!-- <figure style="position: relative;">
-              <img class="battery" src="assets/images/battery.png " alt="battery">
-              <strong style="font-size: 13px;" class="centered">4 PB's <br><span>40 kW</span><br>quantity</strong>
-              <figcaption style="font-size: small;">My PB Wallet</figcaption>
-            </figure> -->
-            <!-- <table class="table power-bank-table table-striped" style="box-shadow: 0 8px 8px -3px grey;">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Cost</th>
-                  <th scope="col">Qty</th>
-                  <th scope="col">Validity</th>
-                  <th scope="col">EndDate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1<img class="small-battery" style="transform: rotate(90deg);"
-                      src="assets/images/battery.png" alt="battery"></th>
-                  <td>1$</td>
-                  <td>10kw</td>
-                  <td>30days</td>
-                  <td>4th Aug 2022</td>
-                </tr>
-                <tr>
-                  <th scope="row">2<img class="small-battery" style="transform: rotate(90deg);"
-                      src="assets/images/battery.png " alt="battery"></th>
-                  <td>1$</td>
-                  <td>10kw</td>
-                  <td>30days</td>
-                  <td>4th Aug 2022</td>
-                </tr>
-                <tr>
-                  <th scope="row">3<img class="small-battery" style="transform: rotate(90deg);"
-                      src="assets/images/battery.png " alt="battery"></th>
-                  <td>1$</td>
-                  <td>10kw</td>
-                  <td>30days</td>
-                  <td>4th Aug 2022</td>
-                </tr>
-                <tr>
-                  <th scope="row">4<img class="small-battery" style="transform: rotate(90deg);"
-                      src="assets/images/battery.png " alt="battery"></th>
-                  <td>1$</td>
-                  <td>10kw</td>
-                  <td>30days</td>
-                  <td>4th Aug 2022</td>
-                </tr>
-              </tbody>
-            </table> -->
-            <table  id="pagination" class="table power-bank-table table-striped" style="box-shadow: 0 8px 8px -3px grey;">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Cost</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Validity</th>
-                  <th scope="col" >End Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let pb of this.pb.getActivepowerBanks().getValue()">
-                  <!-- paginate:args{itemsPerPage:5,currentPage:P} -->
-                  <td>{{pb.cost}}$</td>
-                  <td>{{pb.quantity}}kW</td>
-                  <td>{{pb.validity}}days</td>
-                  <td>{{pb.endDate}}</td>
-                </tr>
-                <!-- <pagination-controls (pageChange)="p=$event"></pagination-controls> -->
-              </tbody>
-            </table>
-           
-          </div>
-          <!-- <button type="button" (click)="demo()">Next</button> -->
-          <a href="#">Click Here for Purchased details</a>
-  </div>
-  <div class="col-6"  >
-    <h5 style="text-align: center;font-weight: bold;">KNOW MY REQUIREMENT</h5>
-    <div class=" box2-sub-box1" style="border: none;background: #eee;
-    box-shadow: 0 8px 8px -4px grey;border-radius: 5px;">
-      <i style="font-size: 12px;">Analyze your require by filling details below</i>
-      <div class="grid"  style="margin-left: -15px;">
-        <div class="col" >
-          <table class="requirement" style="text-align: center;">
-            <!-- <tbody> -->
-            <tr>
-              <th>
-                <figure>
-                  <img src="assets/images/EV.png" alt="EV" style="width: 75%;">
-                  <figcaption style="font-size: 12px;">MY EV</figcaption>
-                </figure>
-              </th>
-              <td class="required">
-                <input type="number" [(ngModel)]="evValue" placeholder="Enter value....100" style="height:10%">
-              </td>
-              <td>
-                <select name="Miles" (input)="chooseUnit($event)" style="font-size: 13px;padding:2px">
-                  <option value="Miles">Miles</option>
-                  <option value="kms">kms</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><i style="font-size: 12px;color: grey;text-align: center;">or/Both</i></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>
-                <figure>
-                  <img style="width: 75%;" src="assets/images/bill.png" alt="My bill">
-                  <figcaption style="font-size: 12px;">MY Bill</figcaption>
-                </figure>
-              </th>
-              <td class="required-ev">
-                <input type="number" placeholder="Enter value" [(ngModel)]="billValue" style="height:10%">
-              </td>
-              <td>
-                <select name="kWh" style="font-size: 13px;padding:2px">
-                  <option value="kWh">kWh</option>
-                </select>
-              </td>
-            </tr>
-            <!-- </tbody> -->
-          </table>
-          <a href="#" data-toggle="modal" data-target="#calculateWindow">Click Here to see the calculation </a><br>
-          <div class="modal fade" id="calculateWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+      <div class="col-8 box1">
+        <div class="grid ">
+          <div class="row">
+            <div class="col-6" style=" border-right:1px dotted #330ae1 ;height: auto;">
+              <h5 style="text-align: center;" class="heading">My Power Banks</h5>
+              <div class="">
+
+                <table id="pagination" class="table power-bank-table table-striped table-bordered"
+                  style="box-shadow: 0 8px 8px -3px grey;">
+                  <thead class="text-white" style="text-align: center;background-color: rgba(8, 38, 86, 0.696);;">
+                    <tr>
+                      <th scope="col">Cost</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Validity</th>
+                      <th scope="col">End Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pb of pbData">
+                      <!-- paginate:args{itemsPerPage:5,currentPage:P} -->
+                      <td>{{pb.cost}} $</td>
+                      <td>{{pb.quantity}} kW</td>
+                      <td>{{pb.validity}} days</td>
+                      <td>{{pb.endDate}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="">
+                  <a class="text-primary">Click Here for Purchased details</a>
+                  <!-- <div class="page-btn" *ngIf="this.pb.getActivepowerBanks().getValue().length>4">
+                    <pagination class="my-pagination" [totalItems]="pbData.length" [directionLinks]="false"
+                      (pageChanged)="showMorePb($event)" [itemsPerPage]="4"></pagination>
+                  </div> -->
                 </div>
-                <div class="modal-body">
-                  <h6>Calculation:</h6>
-                  <h6>For EV:</h6>
-                  <p>5 Miles = 1kWh</p>
-                  <p>1 kW = 25kWh</p>
-                  <p>Capacity of Power Banks Required=(EV+Utility Bill)kWh/25</p>
-                  <h6>Capacity of Power Bank:</h6>
-                  <p>1 Power Bank = 10kW</p>
-                  <p>Number of Power Banks Required=Capacity of Power Banks Required/10</p>
-                </div>
+
+
               </div>
-              </div>
-              </div>
-          <!-- <h6 style="text-align:center ;margin-top: 10px;">Calculate Reset</h6> -->
-          <div class="buttons" style="display: inline-block;margin:0 10px;">
-            <button style="margin: 5px;background-color: #3d5fc6;color: #fff;font-size: 13px;" class="btn calculate"
-              (click)="calculateRequirement()" data-toggle="modal" data-target="#calculateResult">Calculate</button>
-            <button style="margin: 5px;background-color: #3d5fc6;color: #fff;font-size: 13px;"
-              class="btn reset">Reset</button>
-          </div>
-          <div class="modal fade bd-example-modal-sm"  id="calculateResult" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <!-- <div class="modal-content"> -->
-          <table *ngIf='showTable' class="table table-bordered;">
-            <thead style="background-color: #3d5fc6;">
-              <tr>
-                <th scope="col" style="color: #fff;">No. of Power Banks Required
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background-color: #eee;">
-                <th style="text-align: center;font-size: larger;" scope="row">{{finalValue}}</th>
-              </tr>
-            </tbody>
-          </table>
-          <!-- </div> -->
-          </div>
-          </div>
-    </div>
-  </div>
-</div>
-  </div>
-  </div>
-  <hr>
-  <div class="row">
-<div class="grid">
-  <div class="utility-bill row-12" >
-   
-    <h5 style="text-align:center ;font-weight: bold;margin-left:50px ;width: 90%;"> MY UTILITY BILL</h5>
-   <div style="display: flex;">
-        <div class="col-6" >
-            <div class="graph">
-              <h6
-                style="background-color: #3d5fc6;text-align:center ;padding: 5px;font-size:17px;color: #fff;border-radius: 5px;font-weight: normal;width: 110%;">
-                Electricity Unit Consumption Graph in 2022</h6>
-              <!-- <img src="assets/images/consumption graph.png" style="width:120%"> -->
-              <div class="canvas" style="width:110%;height:300%;padding: 5px;">
-                <canvas id="acquisitions" style="width:73%;height:250%;"></canvas>
-              </div>
+              <!-- <button type="button" (click)="demo()">Next</button> -->
+              <!-- <a class="text-primary">Click Here for Purchased details</a> -->
             </div>
-            </div>
-          <div class="col-6" style="margin: 5px 0 0 0;padding: 0;">
-            <h6
-                style="background-color: #3d5fc6;text-align:center ;padding: 5px;font-size:17px;color: #fff;border-radius: 5px;font-weight: normal;width: 81%;">
-                Billing and Payment</h6>
-            <div class="bill-box" style="width: 80%;">
-              <div class="grid">
-                <div class="row">
-                  <div class="col" >
-                    <!-- <img src="assets/images/outstanding bill.png" style="width: 20%;"> -->
-                    <h6 style="border-radius: 5px;padding: 5px;">Outstanding Bill</h6>
-                    <p><span style="background-color: #fff;border-radius: 5px;border: 1px solid grey;padding: 5px;">Bill Amount in USD</span> <strong style="color: maroon;font-size:20px;border: 1px solid black;padding: 1px;background-color: #fff;margin-left: 20px;">$185</strong>
-                      <img src="assets/images/outstanding bill.png" style="width: 15%;margin-left: 5px;">
-                    </p>
+            <div class="col-6">
+              <h5 style="text-align: center;font-weight: bold;">Know My Requirement</h5>
+              <form class="requirement_calc p-2">
+                <i style="font-size: 13px;">Analyze your requirement by filling details below</i>
+                <div class="row align-items-center">
+                  <div class="col-2">
+                    <img src="assets/images/EV.png" alt="EV" style="width: 75%;">
+                    <figcaption style="font-size: 10px;" class="fw-bold">My EV</figcaption>
                   </div>
-                  <div class="col">
-                    <!-- <button type="button"class=" pay" style="border:none;padding:0;cursor: pointer;"><img src="assets/images/pay.png" style="width: 70%;"></button> -->
-                    <h6 style="border-radius: 5px;padding: 5px;">Payment</h6>
-                    <div style="display: flex;">
-                    <div class="inputs">
-                      <div style="margin-bottom: 5px;">
-                      <input type="radio" id="card" name="payment" value="card" style="margin: 5px;">
-                        <label for="card">Pay through card</label>
-                      </div>
-                      <div>
-                      <input type="radio" id="power-bank" name="payment" value="power-bank" style="margin: 5px;">
-                        <label for="power-bank">Pay via Power bank</label>
+                  <div class="col-6">
+                    <input type="number" [(ngModel)]="evValue" name="evValue" placeholder="Enter value....100"
+                      class="form-control">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" value="Miles" class="form-control" disabled>
+                  </div>
+                </div>
+                <p class="text-center text-secondary fst-italic p-0 m-0" style="font-size: 12px;">or/Both</p>
+                <div class="row align-items-center">
+                  <div class="col-2">
+                    <img style="width: 75%;" src="assets/images/bill.png" alt="My bill">
+                    <figcaption style="font-size: 10px;" class="fw-bold">My Bill</figcaption>
+                  </div>
+                  <div class="col-6">
+                    <input type="number" placeholder="Enter value" [(ngModel)]="billValue" name="billValue"
+                      class="form-control">
+                  </div>
+                  <div class="col-4">
+                    <input type="text" value="kWh" class="form-control" disabled>
+                  </div>
+                </div>
+
+                <div class="mt-3 mb-3">
+                  <button style="margin: 5px;  background-color: rgb(36, 28, 117);;color: white;font-size: 13px;"
+                    class="btn calculate" (click)="calculateRequirement()" data-bs-toggle="modal"
+                    data-bs-target="#calculateResult">Calculate</button>
+                  <button style="margin: 5px;  background-color: rgb(36, 28, 117);color: white;font-size: 13px;"
+                    class="btn reset" type="reset" value="Reset">Reset</button>
+                </div>
+              </form>
+
+              <div class="modal fade" id="calculateWindow" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h6>Calculation:</h6>
+                      <h6>For EV:</h6>
+                      <p>5 Miles = 1 kWh</p>
+                      <p>1 kW = 25 kWh</p>
+                      <p>Capacity of Power Banks Required=(EV+Utility Bill)kWh/25</p>
+                      <h6>Capacity of Power Bank:</h6>
+                      <p>1 Power Bank = 10 kW</p>
+                      <p>Number of Power Banks Required=Capacity of Power Banks Required/10</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade bd-example-modal-sm" id="calculateResult" tabindex="-1" role="dialog"
+                aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                  <table *ngIf='showTable' class="table table-bordered;">
+                    <thead style="background-color: #3d5fc6;">
+                      <tr>
+                        <th scope="col" style="color: #fff;">No. of Power Banks Required
+                          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style="background-color: #eee;">
+                        <th style="text-align: center;font-size: larger;" scope="row">{{finalValue}}</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="pt-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#calculateWindow">Click Here to see the calculation
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <!-- <h5 style="text-align:center ;font-weight: bold;"> My Utility Bill</h5> -->
+            <div class="col-7">
+              <h6
+                style="  background-color: rgb(36, 28, 117);text-align:center ;padding: 5px;font-size:17px;color: white;">
+                Electricity Unit Consumption Graph in 2022</h6>
+              <div class="canvas">
+                <canvas id="acquisitions"></canvas>
+              </div>
+            </div>
+            <div class="col-5">
+              <h6
+                style="  background-color: rgb(36, 28, 117);text-align:center ;padding: 5px;font-size:17px;color: white;">
+                Billing and Payment</h6>
+              <div class="bill-box">
+                <div class="grid">
+                  <div class="row">
+                    <div class="col pb-2">
+                      <!-- <img src="assets/images/outstanding bill.png" style="width: 20%;"> -->
+                      <h6 style="border-radius: 5px;padding: 5px;">Outstanding Bill</h6>
+                      <p><span
+                          style="background-color: #fff;border-radius: 5px;border: 1px solid grey;padding: 5px;">Bill
+                          Amount in USD</span> <strong
+                          style="color: maroon;font-size:20px;border: 1px solid black;padding: 1px;background-color: #fff;margin-left: 20px;">$185</strong>
+                        <img src="assets/images/outstanding bill.png"
+                          style="width: 18%;margin-left: 17px;margin-top: -25px;">
+                      </p>
+                    </div>
+                    <div class="col pb-3">
+                      <!-- <button type="button"class=" pay" style="border:none;padding:0;cursor: pointer;"><img src="assets/images/pay.png" style="width: 70%;"></button> -->
+                      <h6 style="border-radius: 5px;padding: 5px;">Payment</h6>
+                      <div style="display: flex;">
+                        <div class="inputs">
+                          <div style="margin-bottom: 5px;">
+                            <input type="radio" id="card" name="payment" value="card" style="margin: 5px;">
+                            <label for="card">Pay Through Card</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="power-bank" name="payment" value="power-bank" style="margin: 5px;">
+                            <label for="power-bank">Pay via Power Bank</label>
+                          </div>
+                        </div>
+                        <img style="width: 35%;margin-left: 25px;" src="assets\images\pay now.png">
                       </div>
                     </div>
-                    <img style="width: 30%;margin-left: 5px;" src="assets\images\pay now blue.png">
-                  </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
-        <hr>
-  <div class="row-12" >
-    <h5 style="text-align:center ;font-weight: bold;width: 90%;margin-left: 20px;">MY USAGE LOGBOOK</h5>
-      <table class="log-book" style="margin-left: 40px;" >
-        <tr style="background-color: black;color:#fff;padding: 5px;">
-          <th scope="col">S No.</th>
-          <th scope="col">Transaction Type</th>
-          <th scope="col">Qty(MW)</th>
-          <th scope="col">Application</th>
-          <th scope="col">Date</th>
-          <th scope="col">Transaction ID</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Used</td>
-          <td>0.02</td>
-          <td>EV</td>
-          <td>12th Jan 2022</td>
-          <td>1001</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Used</td>
-          <td>0.05</td>
-          <td>EV</td>
-          <td>15th Jan 2022</td>
-          <td>1002</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Used</td>
-          <td>0.08</td>
-          <td>EV</td>
-          <td>19th Jan 2022</td>
-          <td>1003</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Used</td>
-          <td>0.05</td>
-          <td>EV</td>
-          <td>29th Jan 2022</td>
-          <td>1004</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Used</td>
-          <td>0.0</td>
-          <td>EV</td>
-          <td>12th Jan 2022</td>
-          <td>1005</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Used</td>
-          <td>0.02</td>
-          <td>EV</td>
-          <td>12th Jan 2022</td>
-          <td>1006</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>Used</td>
-          <td>0.02</td>
-          <td>EV</td>
-          <td>12th Jan 2022</td>
-          <td>1007</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>Used</td>
-          <td>0.04</td>
-          <td>EV</td>
-          <td>8th Jan 2022</td>
-          <td>1008</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>Used</td>
-          <td>0.06</td>
-          <td>EV</td>
-          <td>1st Jul 2022</td>
-          <td>1009</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>Used</td>
-          <td>0.01</td>
-          <td>PB-2</td>
-          <td>10th Jul 2022</td>
-          <td>1010</td>
-        </tr>
+          <hr>
 
-      </table>
-  </div>
-</div>
-  </div>
-</div>
-    </div>
-      <div class="col-4 box-2" >
+
+          <h5 style="text-align:center ;font-weight: bold;">My Usage Logbook</h5>
+          <div class="row justify-content-center">
+            <div class="col">
+              <table class="table table-striped table-bordered">
+                <thead class="text-white" style="text-align: center;background-color: rgba(8, 38, 86, 0.696);">
+                  <tr>
+                    <th scope="col">S No.</th>
+                    <th scope="col">Transaction Type</th>
+                    <th scope="col">Qty(MW)</th>
+                    <th scope="col">Application</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Transaction ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let log of logViewData" class="logBody">
+                    <td>{{log.logId}}</td>
+                    <td>{{log.transactionType}}</td>
+                    <td>{{log.quantity}}</td>
+                    <td>{{log.application}}</td>
+                    <td>{{log.date}}</td>
+                    <td>{{log.transactionId}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="page-btn w-100 d-flex justify-content-end">
+                <pagination class="my-pagination" [totalItems]="logData.length" [directionLinks]="false"
+                  (pageChanged)="showMoreLog($event)" [itemsPerPage]="5"></pagination>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4 box-2">
         <div class="grid">
-          <h5 style="text-align: center;font-weight: bold;margin-bottom: 10px;">MY GENERATION CAPACITY</h5>           
+          <h5 style="text-align: center;font-weight: bold;margin-bottom: 10px;">My Generation Capacity</h5>
           <div class="row" style="margin: 10px;">
-           
-              <div class="grid box3-sub-box1" >
-                <!-- <div class="row">
+
+            <div class="grid box3-sub-box1"
+              style="background-color: rgb(225, 221, 221);padding-bottom:5px;border-radius:5px;box-shadow: 0 8px 8px -4px grey;">
+              <!-- <div class="row">
                             <div class="col"> -->
-                              <!-- <div  style="position: relative;">
+              <!-- <div  style="position: relative;">
                                 <img style="width:70px;margin-top: 10px;" src="assets/images/battery.png "alt="battery">
                                 <strong class="centered-pb">Create PB</strong>
                                 </div> -->
-                <div class="row-12 small-box"style=" margin:10px 50px ;justify-content:center;">
-                  <div class="d-flex">
-                    <div style="margin-right: 15px;">
-                  <p style="font-size: 12px;">Total Earned through Selling<br>
-                  <span style="font-size: 12px;color: #85BB65;">$1,200</span></p>
+              <div class="row-12 small-box" style=" margin:5px 50px ;justify-content:center;">
+                <div class="d-flex">
+                  <div style="margin-right: 15px;">
+                    <p style="font-size: 13px;">Total Earned through Selling<br><br>
+                      <span
+                        style="font-size: 12px;color: #85BB65;border: 1px solid black;padding: 3px;margin-top: 25px;color: maroon;font-weight: bold;">$1,200</span>
+                    </p>
+                  </div>
+                  <img style="width: 15%;" src="assets/images/earned.png">
                 </div>
-                  <img  src="assets/images/earned.png">
-                </div>
-                  <a href="#" style="text-decoration:underline">View all your selling's</a>
-                </div>
-                <!-- </div>
-                      <div class="col"> -->
-                        
-<div class="d-flex row-12" >
-<div  style="padding:10px ;  background: #eee;
-box-shadow: 0 8px 8px -4px grey;font-size: 12px;margin:5px ;font-weight: bold;text-align: center;" >
-<img style="width: 30%;margin-bottom: 10px;"src="assets\images\solar pannel color.png">
-  <p>Installed Capacity</p>
-  <p >5kW</p>
-</div>
-    <div style="padding:10px;  background: #eee;
-    box-shadow: 0 8px 8px -4px grey;font-size: 12px;margin:5px  ;height:fit-content;font-weight: bold;text-align: center;">
-      <img style="width: 30%;margin-bottom: 10px;transform: rotate(90deg);" src="assets\images\battery color.png">
-      <p>Stored Capacity</p>
-      <p >2kW</p>
-    </div>
-  </div>
-
-
-                <!-- </div> -->
-             
-                <!-- </div> -->
+                <a href="#" style="text-decoration:underline">View all your selling's</a>
               </div>
-           
-              <a style="margin-top: 5px;" href="#">Click Here for Past Contract details</a>
+              <!-- </div>
+                      <div class="col"> -->
+
+              <div class="row-12" style="display: flex;padding: 0;">
+                <div
+                  style=" background: #eee;
+box-shadow: 0 8px 8px -4px grey;font-size: 12px;margin:0 5px  ;font-weight: bold;text-align: center;padding-bottom: 5px;border-radius: 5px;">
+                  <img style="width: 40%;margin-bottom: 15px;padding-top: 5px;"
+                    src="assets\images\solar pannel color.png">
+                  <p style="margin-bottom:0 ;">Installed Capacity</p>
+                  <p style="margin-bottom:0 ;">5 kW</p>
+                </div>
+                <div
+                  style="background: #eee;border-radius: 5px;
+    box-shadow: 0 8px 8px -4px grey;font-size: 12px;margin:0 5px  ;padding-top:10px;height:fit-content;font-weight: bold;text-align: center;padding-bottom: 5px;">
+                  <img style="width: 40%;margin-bottom: 5px;padding-top: 5px;transform: rotate(90deg);"
+                    src="assets\images\battery color.png">
+                  <p style="margin-bottom:0 ;">Stored Capacity</p>
+                  <p style="margin-bottom:0 ;">2 kW</p>
+                </div>
+              </div>
+
+
+              <!-- </div> -->
+
+              <!-- </div> -->
             </div>
-            <hr>
-            <h5 style="text-align: center;font-weight: bold;">MY EV</h5>
-            <div class="row box3-sub-box2">
-              <div class="grid">
-                <div class="row">
-                  <div class="col " style="display: flex;margin: 5px;">
-                    <div>
-                    <figure style="margin:0 10px;background: #eee;box-shadow: 0 8px 8px -4px grey;height:70%;padding:0 10px;">
-                      <img src="assets/images/EV.png">
-                      <figcaption style="font-size: 13px;text-align: center;"><strong><span style="font-size: large;">2</span>kW</strong>
+
+            <a style="margin-top: 5px;" href="#">Click Here for Past Contract details</a>
+          </div>
+          <hr style="margin-top: 0;">
+          <h5 style="text-align: center;font-weight: bold;">My EV</h5>
+          <div class="row box3-sub-box2">
+            <div class="grid">
+              <div class="row">
+                <div class="col " style="display: flex;margin: 5px;">
+                  <div>
+                    <figure
+                      style="margin:0 10px;background: #eee;box-shadow: 0 8px 8px -4px grey;height:70%;padding:0 10px;border-radius: 5px;">
+                      <img style="width:110%;padding-top: 20px;padding-bottom: 10px;" src="assets/images/EV color.png">
+                      <figcaption style="font-size: 13px;text-align: center;"><strong><span
+                            style="font-size: large;">2</span> kW</strong>
                       </figcaption>
                     </figure>
-                    <p style="font-size: 13px;text-align: center;margin-top: 5px;background-color: grey;padding:0 5px;width: 80%;margin-left: 15px;border-radius: 5px;">EV <br>Capacity</p>
+                    <p
+                      style="font-size: 13px;font-weight: bold;text-align: center;margin-top: 5px;background-color: #B0d6F5;padding:0 5px;padding-bottom:5px;width: 80%;margin-left: 15px;border-radius: 5px;">
+                      EV <br>Capacity</p>
                   </div>
                   <div>
-                    <figure style="margin:0 10px;background: #eee;box-shadow: 0 8px 8px -4px grey;padding:0px  25px;height:70%">
-                      <img style="width: 120%;padding-top: 20px;padding-bottom: 20px;" src="assets/images/total consumed.png">
-                      <figcaption style="font-size: 13px;text-align: center;"><strong><span style="font-size: large;">10</span>kW</strong>
+                    <figure
+                      style="margin:0 10px;background: #eee;border-radius: 5px;box-shadow: 0 8px 8px -4px grey;padding:0px  10px;height:70%">
+                      <img style="width: 120%;padding-top: 20px;padding-bottom: 10px;" src="assets/images/plugin.png">
+                      <figcaption style="font-size: 13px;text-align: center;"><strong><span
+                            style="font-size: large;">10</span> kW</strong>
                       </figcaption>
                     </figure>
-                    <p style="font-size: 13px;text-align: center;margin-top: 5px;background-color: grey;padding:0 5px;width: 80%;margin-left: 15px;border-radius: 5px;">Units
+                    <p
+                      style="font-size: 13px;font-weight: bold;text-align: center;margin-top: 5px;background-color: #B0d6F5;padding:0 5px;width: 82%;padding-bottom:5px;margin-left: 12px;border-radius: 5px;">
+                      Units
                       Consumed</p>
                   </div>
                   <div>
-                    <figure style="margin:0 10px;background: #eee;box-shadow: 0 8px 8px -4px grey;padding:0px  15px;height:70%">
-                      <img style="width: 90%;padding-top: 20px;padding-bottom: 20px;" src="assets/images/electric tower.png">
-                      <figcaption style="font-size: 13px;text-align: center;"><strong><span style="font-size: large;">4</span>kW</strong>
+                    <figure
+                      style="margin:0 10px;background: #eee;border-radius: 5px;box-shadow: 0 8px 8px -4px grey;padding:0px  10px;height:70%">
+                      <img style="width: 100%;padding-top: 20px;padding-bottom: 25px;padding-left: 5px;"
+                        src="assets/images/electric tower color.png">
+                      <figcaption style="font-size: 13px;text-align: center;padding-bottom: 5px;"><strong><span
+                            style="font-size: large;">4</span> kW</strong>
                       </figcaption>
                     </figure>
-                    <p style="font-size: 13px;text-align: center;margin-top: 5px;background-color: grey;padding:0 5px;width: 77%;margin-left: 15px;border-radius: 5px;">Units Passed to Grid</p>
+                    <p
+                      style="font-size: 13px;font-weight: bold;text-align: center;margin-top: 5px;background-color: #B0d6F5;padding:0 5px;padding-bottom:5px;width: 77%;margin-left: 15px;border-radius: 5px;">
+                      Units Passed to Grid</p>
                   </div>
-                    <!-- <table class="table table-bordered" style="width: fit-content;height:fit-content;border-radius:5px;box-shadow: 0 8px 8px -4px grey;text-align: center;height:40%">
+                  <!-- <table class="table table-bordered" style="width: fit-content;height:fit-content;border-radius:5px;box-shadow: 0 8px 8px -4px grey;text-align: center;height:40%">
                       <thead>
                         <tr style="background-color: #4169e1;">
                           <th scope="col" style="color: #fff;font-size: 12px;"><span style="color: #fff;">Units
@@ -439,41 +337,46 @@ box-shadow: 0 8px 8px -4px grey;font-size: 12px;margin:5px ;font-weight: bold;te
                         </tr>
                       </tbody>
                     </table> -->
-                  </div>
-                  <div class="col-12" style="margin:-5px 5px;" >
-                    <div class="bill-box" style="width: 80%;margin-left: 30px;margin-bottom: 5px;">
-                      <div class="grid">
-                        <div class="row">
-                          <div class="col" >
-                            <!-- <img src="assets/images/outstanding bill.png" style="width: 20%;"> -->
-                            <h6 style="border-radius: 5px;padding: 5px;">Outstanding Bill</h6>
-                            <p><span style="background-color: #fff;border-radius: 5px;border: 1px solid grey;padding: 5px;">Bill Amount in USD</span> <strong style="color: maroon;font-size:20px;border: 1px solid black;padding: 1px;background-color: #fff;margin-left: 20px;">$185</strong>
-                              <img src="assets/images/outstanding bill.png" style="width: 15%;margin-left: 5px;">
-                            </p>
-                          </div>
-                          <div class="col">
-                            <!-- <button type="button"class=" pay" style="border:none;padding:0;cursor: pointer;"><img src="assets/images/pay.png" style="width: 70%;"></button> -->
-                            <h6 style="border-radius: 5px;padding:0 5px;">Payment</h6>
-                            <div style="display: flex;">
+                </div>
+                <div class="col-12" style="margin:-5px 5px;">
+                  <div class="bill-box" style="width: 80%;margin-left: 30px;margin-bottom: 5px;font-size: 14px;">
+                    <div class="grid">
+                      <div class="row">
+                        <div class="col">
+                          <!-- <img src="assets/images/outstanding bill.png" style="width: 20%;"> -->
+                          <h6 style="border-radius: 5px;padding: 5px;">Outstanding Bill</h6>
+                          <p><span
+                              style="background-color: #fff;border-radius: 5px;border: 1px solid grey;padding: 5px;">Bill
+                              Amount in USD</span> <strong
+                              style="color: maroon;font-size:20px;border: 1px solid black;padding: 1px;background-color: #fff;margin-left: 20px;">$300</strong>
+                            <img src="assets/images/outstanding bill.png"
+                              style="width: 18%;margin-left: 17px;margin-top: -25px;">
+                          </p>
+                        </div>
+                        <div class="col">
+                          <!-- <button type="button"class=" pay" style="border:none;padding:0;cursor: pointer;"><img src="assets/images/pay.png" style="width: 70%;"></button> -->
+                          <h6 style="border-radius: 5px;padding:0 5px;">Payment</h6>
+                          <div style="display: flex;">
                             <div class="inputs">
                               <div style="margin-bottom: 5px;">
-                              <input type="radio" id="card" name="payment" value="card" style="margin: 5px;">
+                                <input type="radio" id="card" name="payment" value="card" style="margin: 5px;">
                                 <label for="card">Pay through card</label>
                               </div>
                               <div>
-                              <input type="radio" id="power-bank" name="payment" value="power-bank" style="margin: 5px;">
+                                <input type="radio" id="power-bank" name="payment" value="power-bank"
+                                  style="margin: 5px;">
                                 <label for="power-bank">Pay via Power bank</label>
                               </div>
                             </div>
-                            <img style="width: 30%;margin-left: 5px;" src="assets\images\pay now blue.png">
-                          </div>
+                            <img style="width: 35%;margin-left: 25px;" src="assets\images\pay now.png">
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-               
-                  <!-- <div class="col">
+                </div>
+
+                <!-- <div class="col">
                           <table class="table table-bordered">
                             <thead style="background-color: #4169e1;">
                               <tr>
@@ -489,27 +392,34 @@ box-shadow: 0 8px 8px -4px grey;font-size: 12px;margin:5px ;font-weight: bold;te
                             </tbody>
                           </table>
                         </div> -->
-                </div>
               </div>
-              <a href="#" style="margin-left: 15px;margin-top: 5px;">Click Here for Past Contract details </a>
             </div>
-            <hr>
-            <div class="row box3-sub-box3">
-              <div style=" width: 100%;" class="buttons">
-                <button style="width: 100%;margin: 5px;background-color: #3d5fc6;color: #fff;" class="btn market"
-                  type="button">Market</button>
-                <div style="width: 100%;margin: 5px;" class="btn-grp">
-                  <button style="width: 45%;margin: 2.5%;background-color: orange;color: #fff;" type="button "
-                    class="btn buy" data-toggle="modal" data-target="#exampleModal">BUY</button>
-                  <app-buy></app-buy>
-                  <button style="width: 45%;margin: 2.5%;" class="btn btn-success sell" type="button" data-toggle="modal"
-                    data-target="#ModalSell">SELL</button>
-                  <app-sell></app-sell>
-                </div>
-              </div>
+            <a href="#" style="margin-left: 15px;margin-top: 5px;">Click Here for Past Contract details </a>
+          </div>
+          <hr>
+          <div class="row box3-sub-box3" style="margin-top: -25px;">
+            <!-- <div style=" width: 100%;" class="buttons"> -->
+            <!-- <button style="border: none;" class=" market"type="button"> -->
+            <img style="width: 250px;" class="d-block mx-auto" src="assets/images/market.png">
+            <!-- </button> -->
+            <div style="width: 100%;display: inline;margin-left: 70px;margin-top: -25px;padding-top: 0;"
+              class="btn-grp">
+              <!-- <button style="width: 45%;margin: 2.5%;background-color: orange;color: #fff;" type="button "
+                    class="btn buy" data-toggle="modal" data-target="#exampleModal"> -->
+              <img data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 125px;margin-top: 0;"
+                src="assets/images/buy.png">
+              <!-- </button> -->
+              <app-buy></app-buy>
+              <!-- <button style="width: 45%;margin: 2.5%;" class="btn btn-success sell" type="button" data-toggle="modal"data-target="#ModalSell"> -->
+              <img data-bs-toggle="modal" data-bs-target="#ModalSell" style="width: 125px;margin-top: 0;"
+                src="assets/images/sell.png">
+              <!-- </button> -->
+              <app-sell></app-sell>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
+    </div>
+  </div>
+</div>

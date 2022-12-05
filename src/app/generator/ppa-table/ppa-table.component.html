@@ -11,7 +11,8 @@
                 </tr>
             </thead>
             <tbody class="inExcecution">
-                <tr *ngFor="let each of executionArray" class="text-center">
+                <!-- <tr *ngFor="let each of executionArray" class="text-center"> -->
+                <tr *ngFor="let each of this.gen.ppaTableUpdate.getValue();let i=index" class="text-center" [ngStyle]="{'background-color': each.status=='approved' && i==0 ? 'yellow' : 'white' }">
                     <td>{{each.contractId}}</td>
                     <td>{{each.retailer}}</td>
                     <td>{{each.quantity}}</td>

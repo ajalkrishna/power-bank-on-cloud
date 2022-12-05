@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody class="inExcecution">
-                <tr *ngFor="let each of executionArray;let i = index" class="text-center"  [ngStyle]="{'background-color': each.status=='approved' && i==0 ? 'yellow' : 'white' }">
+                <tr *ngFor="let each of this.util.ppaTableUpdate.getValue();let i = index" class="text-center"  [ngStyle]="{'background-color': each.status=='approved' && i==0 ? 'yellow' : 'white' }">
                     <td>{{each.contractId}}</td>
                     <td>{{each.generatorName}}</td>
                     <td>{{each.quantity}}</td>

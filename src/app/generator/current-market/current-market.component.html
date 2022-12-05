@@ -10,9 +10,12 @@
                 </tr>
             </thead>
             <tbody class="inExcecution">
-                <tr *ngFor="let each of executionArray" class="text-center">
+                <tr *ngFor="let each of executionArray;let i=index" class="text-center">
                     <td>{{each.powerbanks}}</td>
-                    <td>{{each.growth}}</td>
+                    <td>{{each.growth}}
+                        <img *ngIf="each.growth>=0.015" src="../../../assets/images/up-arrows.png" alt="" width="15px">
+                        <img *ngIf="each.growth<0.015" src="../../../assets/images/down-arrows.png" alt="" width="15px">
+                    </td>
                     <td>{{each.pricePerkw | currency:'USD'}}</td>
                 </tr>
                 

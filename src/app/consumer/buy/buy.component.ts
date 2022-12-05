@@ -4,7 +4,7 @@ import { BuyDataService } from 'src/app/buy-data.service';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.scss']
+  styleUrls: ['./buy.component.css']
 })
 export class BuyComponent implements OnInit {
   quantity!: number;

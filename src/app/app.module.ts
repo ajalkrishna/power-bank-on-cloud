@@ -10,6 +10,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { TradingComponent } from './trading/trading.component';
 import {NavbarComponent} from './navbar/navbar.component'
 import { GeneratorsComponent } from './generators/generators.component';
+import { UtilityTcComponent } from './utility-tc/utility-tc.component';
+import { PbTcComponent } from './pb-tc/pb-tc.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { GeneratorsComponent } from './generators/generators.component';
     WelcomeComponent,
     TradingComponent,
     NavbarComponent,
-    GeneratorsComponent
+    GeneratorsComponent,
+    UtilityTcComponent,
+    PbTcComponent
   ],
   imports: [
     BrowserModule,

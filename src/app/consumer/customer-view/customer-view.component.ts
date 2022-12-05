@@ -1,35 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js/auto';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { BuyDataService } from 'src/app/buy-data.service';
-
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
-  styleUrls: ['./customer-view.component.scss']
+  styleUrls: ['./customer-view.component.css']
 })
 export class CustomerViewComponent implements OnInit {
   showTable: boolean = true;
   evValue!: number;
   // p =0;
   pbData!: any[];
+  pbViewData:any[];
   billValue!: number;
+  logData:any[];
+  logViewData:any[];
 
   calculatedValue!: number;
 
-  chosenUnit:string="miles";
+  // chosenUnit:string="miles";
 
   finalValue!: number;
-  title ="chart";
-  constructor(public pb:BuyDataService) { 
-    
+  title = "chart";
+  constructor(public pb: BuyDataService) {
+
   }
-  
-//   toggleShowTable(): void {
-//     this.showTable = !this.showTable;
-// }
+
+  //   toggleShowTable(): void {
+  //     this.showTable = !this.showTable;
+  // }
   ngOnInit(): void {
-    console.log(this.pb.getActivepowerBanks().getValue());
-    this.pbData=this.pb.getActivepowerBanks().getValue();
+    this.pbData = this.pb.getActivepowerBanks().getValue();
+    this.pbViewData=this.pb.getActivepowerBanks().getValue().slice(0,4)
+    this.logData=this.pb.logBookData;
+    this.logViewData=this.logData.slice(0,5)
 
     const data = [
       { month: "Jan", count: 100 },
@@ -44,7 +49,7 @@ export class CustomerViewComponent implements OnInit {
       { month: "Oct", count: 100 },
       { month: "Nov", count: 110 },
     ];
-  
+
     new Chart(
       "acquisitions",
       {
@@ -61,49 +66,41 @@ export class CustomerViewComponent implements OnInit {
       }
     );
   }
-  chooseUnit(e:any){
-
-    this.chosenUnit=e.target.value
-
+  showMoreLog(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.logViewData = this.logData.slice(startItem, endItem);
+  }
+  showMorePb(event: PageChangedEvent){
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.pbViewData = this.pbData.slice(startItem, endItem);
   }
 
-  calculateRequirement(){
-    if(this.evValue==undefined){
-      this.evValue=0;
-    
+  calculateRequirement() {
+
+    if (this.evValue == undefined) {
+      this.evValue = 0;
+
     }
-    if(this.billValue==undefined){
-      this.billValue=0;
-    
+    if (this.billValue == undefined) {
+      this.billValue = 0;
+
     }
-    console.log(this.evValue);
-    console.log(this.billValue);
-    let calculatedValue;
 
-  
-
-    if(this.chosenUnit=="kms"){
-
-      calculatedValue=this.evValue*25
-
-    }else{
-
-        calculatedValue=this.evValue/5
-
-      }
-    this.finalValue = Math.round(((calculatedValue+this.billValue)/25)/10);
+    this.finalValue = Math.ceil((((this.evValue / 5) + this.billValue) / 25) / 10);
 
   }
-  demo(){
-    let update={
-      cost:2,        
-      quantity:100,
-      validity:30,
-      endDate:"2nd sep 2022"
+  demo() {
+    let update = {
+      cost: 2,
+      quantity: 100,
+      validity: 30,
+      endDate: "2nd sep 2022"
     }
-this.pbData.unshift(update);
-this.pb.getActivepowerBanks().next(this.pbData);
+    this.pbData.unshift(update);
+    this.pb.getActivepowerBanks().next(this.pbData);
 
-}
+  }
 
 }

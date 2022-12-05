@@ -9,7 +9,28 @@
     position: relative;
     #warning{
         position: absolute;
-        right: 0;
+        right: 23%;
         top: 0;
     }
+
+}
+.request_notify{
+    position: relative;
+    #request_warning{
+        position: absolute;
+        right: 30%;
+        top: 0;
+    }
+}
+.heading{
+    background-color: darkblue;
+    color: rgb(255, 255, 255);
+    padding: 0.3rem 0.8rem;
+    margin-left: 150px;
+    // width: 80%;
+}
+.btn-close{
+    border: 1px solid red;
+    background-color: white;
+    color: red;
 }

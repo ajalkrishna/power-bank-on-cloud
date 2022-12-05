@@ -10,9 +10,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link notify" data-bs-toggle="modal" data-bs-target="#exampleModal" >Notifications <span id="warning"><img *ngIf="this.util.newContract.getValue().status=='approved'" src="../../../assets/images/warning.png" width="12x" alt=""></span></a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link notify" data-bs-toggle="modal" data-bs-target="#exampleModal">Notifications <span
+              id="warning"><img *ngIf="this.util.newContract.getValue().status=='approved'"
+                src="../../../assets/images/warning.png" width="12x" alt=""></span></a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link fw-bold">Welcome Utility C</a>
         </li>
@@ -24,34 +26,67 @@
             <li><a class="nav-link text-dark" routerLink="/home">Home</a></li>
             <li><a class="nav-link text-dark" routerLink="/consumer">Consumer</a></li>
             <li><a class="nav-link text-dark" routerLink="/generator">Generator</a></li>
-            <li><a class="nav-link text-dark" routerLink="/trading">Trading</a></li>
-            <li><a class="nav-link text-dark">PPA Requests</a></li>
+            <li class="nav-item">
+              <a class="nav-link request_notify text-dark" data-bs-toggle="modal" data-bs-target="#ppaRequestModal">PPA Request
+                <span id="request_warning"><img *ngIf="this.gen.newPpaFromGenerator.getValue().status=='requested'"
+                    src="../../../assets/images/warning.png" width="12x" alt=""></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link notify text-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">PPA Approved
+                <span id="warning"><img *ngIf="this.util.newContract.getValue().status=='approved'"
+                    src="../../../assets/images/warning.png" width="12x" alt=""></span></a>
+
           </ul>
         </li>
       </ul>
     </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      
-      <div class="modal-body">
-        <div *ngIf="this.util.newContract.getValue().status=='approved'">
-          <p>New PPA contract has been approved by <span class="fw-bold">{{newPpa.generatorName}}</span> with a contract id <span class="fw-bold">{{newPpa.contractId}}</span></p>
-          <button class="btn btn-primary d-block mx-auto" (click)="confirmApproval()" data-bs-dismiss="modal">OK</button>
-        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div *ngIf="this.util.newContract.getValue().status=='approved'">
+              <p>New PPA contract has been approved by <span class="fw-bold">{{newPpa.generatorName}}</span> with a
+                contract id <span class="fw-bold">{{newPpa.contractId}}</span> for the capacity of <span class="fw-bold">{{newPpa.quantity}}kW.</span></p>
+              <button class="btn btn-primary d-block mx-auto" (click)="confirmApproval()"
+                data-bs-dismiss="modal">OK</button>
+            </div>
 
-        <div *ngIf="this.util.newContract.getValue().status==''">
-          <p class="text-center">No new active ppa requests!!</p>
-          <button class="btn btn-primary d-block mx-auto" data-bs-dismiss="modal">OK</button>
+            <div *ngIf="this.util.newContract.getValue().status==''">
+              <p class="text-center">No new active ppa requests!!</p>
+              <button class="btn btn-primary d-block mx-auto" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
         </div>
-
-        
       </div>
-
     </div>
-  </div>
-</div>
+
+    <div class="modal fade" id="ppaRequestModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div *ngIf="this.gen.newPpaFromGenerator.getValue().status=='requested'">
+              <!-- <p>New PPA contract has been approved by <span class="fw-bold">{{newPpa.generatorName}}</span> with a
+                contract id <span class="fw-bold">{{newPpa.contractId}}</span></p>
+              <button class="btn btn-primary d-block mx-auto" (click)="confirmApproval()"
+                data-bs-dismiss="modal">OK</button> -->
+                <div class="d-flex align-items-center mb-2">
+                  <h5 class="heading text-center">Request for "New Power Purchase Agreement (PPA)" ​</h5>
+
+                  <button type="button" class="btn-close d-block ms-auto" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+              </div>
+                <app-ppa-approval-utility></app-ppa-approval-utility>
+            </div>
+
+            <div *ngIf="this.gen.newPpaFromGenerator.getValue().status==''">
+              <p class="text-center">No new active ppa requests!!</p>
+              <button class="btn btn-primary d-block mx-auto" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

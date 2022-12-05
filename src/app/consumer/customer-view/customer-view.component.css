@@ -25,6 +25,7 @@
   .box1{
     border-right:1px dotted #330ae1 ;
     height: auto;
+    /* border-right: 2px solid rgb(206, 202, 202); */
 }
 .box2-sub-box1 input::placeholder{
     font-size: 12px;
@@ -32,10 +33,11 @@
 }
 
 h5{
-    background-color: #3d5fc6;
-    border-radius: 5px;
+    background-color: rgb(36, 28, 117);
+    color: white;
+    /* border-radius: 5px; */
     padding: 5px;
- font-size: large;
+    font-size: 1.1rem;
 }
   .required::after{
     content:" *";
@@ -79,7 +81,7 @@ box-shadow: 0 8px 8px -4px grey;
 .bill-box .row{
     display: inline-block;
 }
-.log-book  table,.log-book td{
+/* .log-book  table,.log-book td{
     border: 1px solid black;
     }
     .log-book th,td{
@@ -88,7 +90,7 @@ box-shadow: 0 8px 8px -4px grey;
     }
 .utility-bill .col-6{
 margin: 5px 30px;
-}
+} */
 
 .power-bank-table thead{
     font-size: 12px;
@@ -106,10 +108,10 @@ margin: 5px 30px;
     border: 1px solid black;
 }
 .calculate:hover{
-         transform: scale(1.2);
+         transform: scale(1.1);
 }
 .reset:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 .buy:hover{
    opacity: 0.6;
@@ -161,6 +163,8 @@ margin: 5px 30px;
   }
   a{
       font-size: small;
+      font-style: italic;
+      text-decoration: none;
   }
   hr{
     border-top: 1px dotted #330ae1;
@@ -186,7 +190,33 @@ letter-spacing: 10px;
         font-size: 10px;
     }
 }
-.consumer_page{
-    padding-left: 2rem;
-    margin-right: 2rem;
+.customer-page{
+    margin-left: 1rem;
+    margin-right: 1.2rem;
+}
+.form-control{
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 0.8rem;
+}
+.requirement_calc{
+    background-color: #eee;
+    box-shadow: 0 8px 8px -4px grey;
+}
+.my-pagination::ng-deep .page-item .page-link {
+    z-index: 1;
+    color: #FFF;
+    background-color: rgb(49, 96, 98) !important;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0;
+    display: block;
+    margin: auto;
+}
+
+.my-pagination::ng-deep .page-item.active .page-link {
+    background-color: black !important;
+}
+.logBody td{
+    font-size: 0.8rem;
 }

@@ -5,14 +5,14 @@
         <div class="mb-1">
             <div class="row border bg-light p-2 rounded-pill align-items-center">
                 <div class="col-6">
-                    <label for="generatorName">Power Generator</label>
+                    <label for="generatorName">Utility</label>
                 </div>
                 <div class="col-6">
                     <select name="generatorName" id="generatorName" class="form-select w-50 rounded-pill"
                         (input)="chooseGenerator($event)">
                         <option value="Select" [selected]="selectStatus">Select...</option>
-                        <option *ngFor="let each of generators" [value]="each.generatorName">
-                            {{each.generatorName}}</option>
+                        <option *ngFor="let each of utilities" [value]="each.utilityCode">
+                            {{each.powerUtility}}</option>
                     </select>
                 </div>
             </div>
@@ -20,7 +20,7 @@
         <div class="mb-1">
             <div class="row border bg-light p-2 rounded-pill align-items-center">
                 <div class="col-6">
-                    <label for="generatorCode">Generator Code</label>
+                    <label for="generatorCode">Utility Code</label>
                 </div>
                 <div class="col-6">
                     <div class="generator_code">
@@ -39,8 +39,7 @@
 
                 </div>
                 <div class="col-6">
-                    <select name="typeOfResource" id="typeOfResource" class="form-select w-50 rounded-pill"
-                        (input)="chooseType($event)">
+                    <select name="typeOfResource" id="typeOfResource" class="form-select w-50 rounded-pill" (input)="chooseType($event)">
                         <option [selected]="selectStatus">Select...</option>
                         <option *ngFor="let type of typeOfResources" [value]="type">{{type}}</option>
                     </select>
@@ -82,19 +81,6 @@
                         [min]="currentDate" [max]="startDate">
                 </div>
             </div>
-            <!-- <div class="row border bg-light p-1 rounded-pill">
-                <div class="col-12">
-                    <div class="row startDateOfPpa">
-                        <div class="col-6">
-                            <label for="startDate">Commencement of Power from​</label>
-                        </div>
-                        <div class="col-3">
-                            <input type="date" formControlName="startDate" id="startDate"
-                                class="form-control rounded-pill" [min]="currentDate" [max]="startDate">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
         <!-- validity -->
@@ -109,17 +95,7 @@
                         [min]="currentDate" [max]="endDate">
                 </div>
             </div>
-            <!-- <div class="row border bg-light p-2 rounded-pill">
-                <div class="col-9">
-                    <div class="row validityOfpa">
-                        <div class="col-8">
-                        </div>
-                        <div class="col-4">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+
         </div>
 
         <!-- cost -->
@@ -166,7 +142,7 @@
         <!-- terms and condition -->
         <div class="d-flex">
             <input type="checkbox" name="confirm" id="confirm" class="form-check-input">
-            <label class="ms-2">I agree to the <a href="#confirm"> terms & condition</a>​</label>
+            <label class="ms-2">I agree to the <a href="http://localhost:4200/ppa-terms&conditions" target="_blank"> terms & condition</a>​</label>
         </div>
 
         <!-- submit Button -->

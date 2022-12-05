@@ -9,6 +9,8 @@ export class UtilityService {
   ppaRequest = new BehaviorSubject(null)
   listedOnCloud = new BehaviorSubject(34)
   yetToListOnCloud = new BehaviorSubject(267)
+  ppaTableUpdate = new BehaviorSubject(null)
+
   newPpaRequest = new BehaviorSubject({
     generatorName: '',
     generatorCode: '',
@@ -23,6 +25,20 @@ export class UtilityService {
     requestDate: '',
     status: ''
   })
+  // newPpaRequest = new BehaviorSubject({
+  //   generatorName: '22',
+  //   generatorCode: '22',
+  //   generatingSource: '22',
+  //   utilityName: '22',
+  //   utilityId: '22',
+  //   capacityRequested: 20,
+  //   startDate: '222',
+  //   validity: '22',
+  //   fixedCost: 20,
+  //   variableCost: 20,
+  //   requestDate: '22',
+  //   status: 'requested'
+  // })
   newPbSpecification = new BehaviorSubject({
     contractId: '',
     qtyOfPowebank: '',
@@ -31,6 +47,7 @@ export class UtilityService {
   newContract = new BehaviorSubject({
     contractId: 0,
     generatorName: "",
+    retailer:'',
     quantity: 0,
     generatingSource: "",
     timeline: "",
@@ -241,9 +258,6 @@ export class UtilityService {
     return this.typeOfResources
   }
   updateInExcecutionTable(newPpa) {
-    console.log("inside methode");
-    console.log(newPpa);
-
 
     this.inExcecutionGenerators.unshift(newPpa)
     // this.availableGenerators.unshift(newPpa)

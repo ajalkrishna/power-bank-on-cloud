@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneratorService } from 'src/app/generator/generator.service';
 import { UtilityService } from 'src/app/utility.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class NavbarComponent implements OnInit {
       status:''
   }
 
-  constructor(public util:UtilityService) { }
+  constructor(public util:UtilityService,public gen:GeneratorService) { }
 
   ngOnInit(): void {
     this.newPpa=this.util.newContract.getValue()

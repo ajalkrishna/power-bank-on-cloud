@@ -13,7 +13,7 @@
 
 <body>
   <app-root></app-root>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"></script>
@@ -21,218 +21,218 @@
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
 
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script>
-      window.onload = function () {
-        var chart = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          theme: "light2",
-          axisX: {
-            // valueFormatString: "DD MMM",
-            crosshair: {
-              enabled: true,
-              // snapToDataPoint: true,
-            },
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script>
+    window.onload = function () {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2",
+        axisX: {
+          // valueFormatString: "DD MMM",
+          crosshair: {
+            enabled: true,
+            // snapToDataPoint: true,
           },
-          axisY: {
-            title: "Number of Visits",
-            includeZero: true,
-            crosshair: {
-              enabled: true,
-            },
+        },
+        axisY: {
+          title: "Number of Visits",
+          includeZero: true,
+          crosshair: {
+            enabled: true,
           },
-          toolTip: {
-            shared: true,
+        },
+        toolTip: {
+          shared: true,
+        },
+        legend: {
+          cursor: "pointer",
+          verticalAlign: "bottom",
+          horizontalAlign: "left",
+          dockInsidePlotArea: true,
+          itemclick: toogleDataSeries,
+        },
+        data: [
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Soler",
+            markerType: "square",
+            // xValueFormatString: "DD MMM, YYYY",
+            color: "#E8F706",
+            dataPoints: [
+              { x: 1, y: 1.2 },
+              { x: 2, y: 1.3 },
+              { x: 3, y: 1.3 },
+              { x: 4, y: 1.4 },
+              { x: 5, y: 1.3 },
+              { x: 6, y: 1.3 },
+              { x: 7, y: 1.5 },
+              { x: 8, y: 2.2 },
+              { x: 9, y: 2.3 },
+              { x: 10, y: 2 },
+            ],
           },
-          legend: {
-            cursor: "pointer",
-            verticalAlign: "bottom",
-            horizontalAlign: "left",
-            dockInsidePlotArea: true,
-            itemclick: toogleDataSeries,
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Wind",
+            lineDashType: "dash",
+            color: "#1437FC",
+            dataPoints: [
+              { x: 1, y: 2.3 },
+              { x: 2, y: 2.1 },
+              { x: 3, y: 2.1 },
+              { x: 4, y: 2 },
+              { x: 5, y: 1.9 },
+              { x: 6, y: 1.7 },
+              { x: 7, y: 1.2 },
+              { x: 8, y: 1.5 },
+              { x: 9, y: 2.2 },
+              { x: 10, y: 2.4 },
+            ],
           },
-          data: [
-            {
-              type: "line",
-              showInLegend: true,
-              name: "Soler",
-              markerType: "square",
-              // xValueFormatString: "DD MMM, YYYY",
-              color: "#E8F706",
-              dataPoints: [
-                { x: 1, y: 1.2 },
-                { x: 2, y: 1.3 },
-                { x: 3, y: 1.3 },
-                { x: 4, y: 1.4 },
-                { x: 5, y: 1.3 },
-                { x: 6, y: 1.3 },
-                { x: 7, y: 1.5 },
-                { x: 8, y: 2.2 },
-                { x: 9, y: 2.3 },
-                { x: 10, y: 2 },
-              ],
-            },
-            {
-              type: "line",
-              showInLegend: true,
-              name: "Wind",
-              lineDashType: "dash",
-              color: "#1437FC",
-              dataPoints: [
-                { x: 1, y: 2.3 },
-                { x: 2, y: 2.1 },
-                { x: 3, y: 2.1 },
-                { x: 4, y: 2 },
-                { x: 5, y: 1.9 },
-                { x: 6, y: 1.7 },
-                { x: 7, y: 1.2 },
-                { x: 8, y: 1.5 },
-                { x: 9, y: 2.2 },
-                { x: 10, y: 2.4 },
-              ],
-            },
-            {
-              type: "line",
-              showInLegend: true,
-              name: "Prosumer",
-              lineDashType: "dash",
-              color: "#06F744",
-              dataPoints: [
-                { x: 1, y: 1.8 },
-                { x: 2, y: 1.8 },
-                { x: 3, y: 1.5 },
-                { x: 4, y: 1.5 },
-                { x: 5, y: 1.4 },
-                { x: 6, y: 1.3 },
-                { x: 7, y: 1.2 },
-                { x: 8, y: 1.2 },
-                { x: 9, y: 1.5 },
-                { x: 10, y: 1.5 },
-              ],
-            },
-          ],
-        });
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Prosumer",
+            lineDashType: "dash",
+            color: "#06F744",
+            dataPoints: [
+              { x: 1, y: 1.8 },
+              { x: 2, y: 1.8 },
+              { x: 3, y: 1.5 },
+              { x: 4, y: 1.5 },
+              { x: 5, y: 1.4 },
+              { x: 6, y: 1.3 },
+              { x: 7, y: 1.2 },
+              { x: 8, y: 1.2 },
+              { x: 9, y: 1.5 },
+              { x: 10, y: 1.5 },
+            ],
+          },
+        ],
+      });
+      chart.render();
+
+      function toogleDataSeries(e) {
+        if (
+          typeof e.dataSeries.visible === "undefined" ||
+          e.dataSeries.visible
+        ) {
+          e.dataSeries.visible = false;
+        } else {
+          e.dataSeries.visible = true;
+        }
         chart.render();
+      }
+      // ==========trading=====================
+      var tradingchart = new CanvasJS.Chart("tradingchartContainer", {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "Market Overview",
+        },
+        axisX: {
+          // valueFormatString: "DD MMM",
+          crosshair: {
+            enabled: true,
+            snapToDataPoint: true,
+          },
+        },
+        axisY: {
+          title: "Number of Visits",
+          includeZero: true,
+          crosshair: {
+            enabled: true,
+          },
+        },
+        toolTip: {
+          shared: true,
+        },
+        legend: {
+          cursor: "pointer",
+          verticalAlign: "bottom",
+          horizontalAlign: "left",
+          dockInsidePlotArea: true,
+          itemclick: tradingtoogleDataSeries,
+        },
+        data: [
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Soler",
+            markerType: "square",
+            // xValueFormatString: "DD MMM, YYYY",
+            color: "#E8F706",
+            dataPoints: [
+              { x: 1, y: 1.2 },
+              { x: 2, y: 1.3 },
+              { x: 3, y: 1.3 },
+              { x: 4, y: 1.4 },
+              { x: 5, y: 1.3 },
+              { x: 6, y: 1.3 },
+              { x: 7, y: 1.5 },
+              { x: 8, y: 2.2 },
+              { x: 9, y: 2.3 },
+              { x: 10, y: 2 },
+            ],
+          },
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Wind",
+            lineDashType: "dash",
+            color: "#1437FC",
+            dataPoints: [
+              { x: 1, y: 2.3 },
+              { x: 2, y: 2.1 },
+              { x: 3, y: 2.1 },
+              { x: 4, y: 2 },
+              { x: 5, y: 1.9 },
+              { x: 6, y: 1.7 },
+              { x: 7, y: 1.2 },
+              { x: 8, y: 1.5 },
+              { x: 9, y: 2.2 },
+              { x: 10, y: 2.4 },
+            ],
+          },
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Prosumer",
+            lineDashType: "dash",
+            color: "#06F744",
+            dataPoints: [
+              { x: 1, y: 1.8 },
+              { x: 2, y: 1.8 },
+              { x: 3, y: 1.5 },
+              { x: 4, y: 1.5 },
+              { x: 5, y: 1.4 },
+              { x: 6, y: 1.3 },
+              { x: 7, y: 1.2 },
+              { x: 8, y: 1.2 },
+              { x: 9, y: 1.5 },
+              { x: 10, y: 1.5 },
+            ],
+          },
+        ],
+      });
+      tradingchart.render();
 
-        function toogleDataSeries(e) {
-          if (
-            typeof e.dataSeries.visible === "undefined" ||
-            e.dataSeries.visible
-          ) {
-            e.dataSeries.visible = false;
-          } else {
-            e.dataSeries.visible = true;
-          }
-          chart.render();
+      function tradingtoogleDataSeries(e) {
+        if (
+          typeof e.dataSeries.visible === "undefined" ||
+          e.dataSeries.visible
+        ) {
+          e.dataSeries.visible = false;
+        } else {
+          e.dataSeries.visible = true;
         }
-        // ==========trading=====================
-        var tradingchart = new CanvasJS.Chart("tradingchartContainer", {
-          animationEnabled: true,
-          theme: "light2",
-          title: {
-            text: "Market Overview",
-          },
-          axisX: {
-            // valueFormatString: "DD MMM",
-            crosshair: {
-              enabled: true,
-              snapToDataPoint: true,
-            },
-          },
-          axisY: {
-            title: "Number of Visits",
-            includeZero: true,
-            crosshair: {
-              enabled: true,
-            },
-          },
-          toolTip: {
-            shared: true,
-          },
-          legend: {
-            cursor: "pointer",
-            verticalAlign: "bottom",
-            horizontalAlign: "left",
-            dockInsidePlotArea: true,
-            itemclick: tradingtoogleDataSeries,
-          },
-          data: [
-            {
-              type: "line",
-              showInLegend: true,
-              name: "Soler",
-              markerType: "square",
-              // xValueFormatString: "DD MMM, YYYY",
-              color: "#E8F706",
-              dataPoints: [
-                { x: 1, y: 1.2 },
-                { x: 2, y: 1.3 },
-                { x: 3, y: 1.3 },
-                { x: 4, y: 1.4 },
-                { x: 5, y: 1.3 },
-                { x: 6, y: 1.3 },
-                { x: 7, y: 1.5 },
-                { x: 8, y: 2.2 },
-                { x: 9, y: 2.3 },
-                { x: 10, y: 2 },
-              ],
-            },
-            {
-              type: "line",
-              showInLegend: true,
-              name: "Wind",
-              lineDashType: "dash",
-              color: "#1437FC",
-              dataPoints: [
-                { x: 1, y: 2.3 },
-                { x: 2, y: 2.1 },
-                { x: 3, y: 2.1 },
-                { x: 4, y: 2 },
-                { x: 5, y: 1.9 },
-                { x: 6, y: 1.7 },
-                { x: 7, y: 1.2 },
-                { x: 8, y: 1.5 },
-                { x: 9, y: 2.2 },
-                { x: 10, y: 2.4 },
-              ],
-            },
-            {
-              type: "line",
-              showInLegend: true,
-              name: "Prosumer",
-              lineDashType: "dash",
-              color: "#06F744",
-              dataPoints: [
-                { x: 1, y: 1.8 },
-                { x: 2, y: 1.8 },
-                { x: 3, y: 1.5 },
-                { x: 4, y: 1.5 },
-                { x: 5, y: 1.4 },
-                { x: 6, y: 1.3 },
-                { x: 7, y: 1.2 },
-                { x: 8, y: 1.2 },
-                { x: 9, y: 1.5 },
-                { x: 10, y: 1.5 },
-              ],
-            },
-          ],
-        });
         tradingchart.render();
+      }
 
-        function tradingtoogleDataSeries(e) {
-          if (
-            typeof e.dataSeries.visible === "undefined" ||
-            e.dataSeries.visible
-          ) {
-            e.dataSeries.visible = false;
-          } else {
-            e.dataSeries.visible = true;
-          }
-          tradingchart.render();
-        }
-
-      };
-    </script>
+    };
+  </script>
 </body>
 
 </html>

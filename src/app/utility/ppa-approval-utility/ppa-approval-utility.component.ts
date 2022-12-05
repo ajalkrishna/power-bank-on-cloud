@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneratorService } from 'src/app/generator/generator.service';
 import { UtilityService } from 'src/app/utility.service';
-import { GeneratorService } from '../generator.service';
 
 @Component({
-  selector: 'app-ppa-approve',
-  templateUrl: './ppa-approve.component.html',
-  styleUrls: ['./ppa-approve.component.scss']
+  selector: 'app-ppa-approval-utility',
+  templateUrl: './ppa-approval-utility.component.html',
+  styleUrls: ['./ppa-approval-utility.component.scss']
 })
-export class PpaApproveComponent implements OnInit {
+export class PpaApprovalUtilityComponent implements OnInit {
 
-  constructor( public util: UtilityService,private gen:GeneratorService) { }
+  constructor( public gen: GeneratorService,public util:UtilityService) { }
   ppaRequest:any;
   initial:any={
     generatorName: '',
@@ -27,35 +27,37 @@ export class PpaApproveComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.ppaRequest=this.util.newPpaRequest.getValue();
+    this.ppaRequest=this.gen.newPpaFromGenerator.getValue();
+    console.log(this.ppaRequest);
     
+
   }
 
   approvePpa(){
     let contract ={
       contractId: 9090,
       generatorName: this.ppaRequest.generatorName,
-      retailer: this.ppaRequest.utilityName,
+      retailer:this.ppaRequest.utilityName,
       quantity: this.ppaRequest.capacityRequested,
       generatingSource: this.ppaRequest.generatingSource,
       timeline: `${this.ppaRequest.startDate} to ${this.ppaRequest.validity}`,
       status:'approved'
     }
-    let ppaTable=this.gen.ppaTableUpdate.getValue()
+    let ppaTable=this.util.ppaTableUpdate.getValue();
+    console.log(ppaTable);
     
     let updatedTable:any[]=[];
     for(let i=0;i<3;i++){
       updatedTable.push(ppaTable[i])
     }
     updatedTable.unshift(contract)
-   this.gen.ppaTableUpdate.next(updatedTable)
-    this.util.newPpaRequest.next(this.initial);
-    this.util.newContract.next(contract)
-    this.util.updateInExcecutionTable(contract)
+    console.log(updatedTable);
+    this.util.ppaTableUpdate.next(updatedTable)
+    this.gen.newPpaFromGenerator.next(this.initial);
+    this.gen.newContractFromUtility.next(contract)
     this.gen.updateUtilityInExecutionTable(contract)
+    this.util.updateInExcecutionTable(contract)
     this.ppaRequest=this.initial;
   }
-
-  
 
 }

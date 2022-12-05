@@ -17,19 +17,22 @@ export class PpaTableComponent implements OnInit {
   completedReturned:any[]
  
 
-  constructor(private util:UtilityService) { }
+  constructor(public util:UtilityService) { }
 
   ngOnInit(): void {
     this.genInExecution=this.util.getGeneratorsInExcecution()
     this.completedGen = this.util.getExcecutionCompletedGenerators()
     this.executionArray = this.genInExecution.slice(0, 4);
+    this.util.ppaTableUpdate.next(this.executionArray)
     this.completedReturned =this.completedGen.slice(0,4);
     
   }
   showMoreInExecution(event: PageChangedEvent): void {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
+    this.genInExecution=this.util.getGeneratorsInExcecution()
     this.executionArray = this.genInExecution.slice(startItem, endItem);
+    this.util.ppaTableUpdate.next(this.executionArray)
   }
   showMore(event: PageChangedEvent){
     const startItem = (event.page - 1) * event.itemsPerPage;

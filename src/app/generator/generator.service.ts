@@ -6,13 +6,44 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GeneratorService {
 
+  newPpaFromGenerator= new BehaviorSubject({
+    generatorName: '',
+    generatorCode: '',
+    generatingSource: '',
+    utilityName: '',
+    utilityId: '',
+    capacityRequested: 0,
+    startDate: '',
+    validity: '',
+    fixedCost: 0,
+    variableCost: 0,
+    requestDate: '',
+    status: ''
+  });
+  ppaTableUpdate = new BehaviorSubject(null)
+  // newPpaFromGenerator= new BehaviorSubject({
+  //   generatorName: 'Test',
+  //   generatorCode: '123',
+  //   generatingSource: '11',
+  //   utilityName: '222',
+  //   utilityId: '222',
+  //   capacityRequested: 22,
+  //   startDate: '222',
+  //   validity: '222',
+  //   fixedCost: 22,
+  //   variableCost: 22,
+  //   requestDate: '2222',
+  //   status: 'requested'
+  // });
+  newContractFromUtility= new BehaviorSubject(null)
 
   utilityInExecution:any[]=[
     {
       contractId: 1789,
       retailer: "Utility B",
       quantity: "200 kW",
-      timeline: "1st Dec '22-28th Feb '23"
+      timeline: "1st Dec '22-28th Feb '23",
+      status:"approved"
     },
     {
       contractId: 2156,
@@ -165,4 +196,7 @@ export class GeneratorService {
 
 
   constructor() { }
+  updateUtilityInExecutionTable(contract){
+    this.utilityInExecution.unshift(contract)
+  }
 }

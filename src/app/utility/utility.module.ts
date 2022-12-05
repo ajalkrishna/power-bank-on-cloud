@@ -14,6 +14,7 @@ import { CreatePbComponent } from './create-pb/create-pb.component';
 import { CreatePpaComponent } from './create-ppa/create-ppa.component';
 import { MyGeneratorsComponent } from './my-generators/my-generators.component';
 import { UtilityDashboardComponent } from './utility-dashboard/utility-dashboard.component';
+import { PpaApprovalUtilityComponent } from './ppa-approval-utility/ppa-approval-utility.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UtilityDashboardComponent } from './utility-dashboard/utility-dashboard
     CreatePbComponent,
     CreatePpaComponent,
     MyGeneratorsComponent,
-    UtilityDashboardComponent
+    UtilityDashboardComponent,
+    PpaApprovalUtilityComponent
   ],
   imports: [
     CommonModule,

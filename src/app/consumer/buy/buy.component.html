@@ -1,14 +1,22 @@
-<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-    <div class="navbar modal-header">
-    <h4  style="text-align:center;color: #fff;">Buy Power Bank</h4>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true" style="color: #fff;">&times;</span>
-      </button>
-    </div>
-    <form >
-    <table >
+            <!-- <div class="navbar modal-header">
+                <h4 style="text-align:center;color: #fff;">Buy Power Bank</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" style="color: #fff;">&times;</span>
+                </button>
+            </div> -->
+            <div class="d-flex align-items-center mb-1 mt-4">
+                <h5 class="heading text-center">Buy Power Banks ​
+                </h5>
+
+                <button type="button" class="btn-close d-block ms-auto me-3" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <!-- <table >
         <tr >
             <th>Number of Power Banks</th>
             <td ><input class="arrows" type="number" name="points" step="" [(ngModel)]="quantity"></td>
@@ -36,32 +44,181 @@
             <th>Timeline</th>
             <td><input type="date" name="timeline" [(ngModel)]="timeline"></td>
         </tr>
-    </table>
-    <div class="modal-footer" style="justify-content: center;">
-        <button type="submit" class="btn" data-dismiss="modal" style="background-color: #3d5fc6;color:#fff" data-toggle="modal" data-target="#confirmation-msg"(click)="confirmBuy()" >Buy</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-    </form>
-</div>
-</div>
-</div>
+    </table> -->
+            <div class="modal-body">
 
 
+                <div class="row mt-2">
+                    <div class="col-10 mx-auto">
+                        <form>
+                            <div class="mb-1">
+                                <div class="row border bg-light p-2 rounded-pill align-items-center">
+                                    <div class="col-6">
+                                        <label for="powerbanks">Number of Power Banks</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input id="powerbanks" class="arrows form-control" type="number" name="points"
+                                            step="" [(ngModel)]="quantity">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <div class="row border bg-light p-2 rounded-pill align-items-center">
+                                    <div class="col-6">
+                                        <label for="capacity">Capacity of Power Bank in kW​</label>
 
-    <div class="modal fade" id="confirmation-msg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class=" modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <input id="capacity" type="number" class="form-control" name="capacity"
+                                            [(ngModel)]="capacity">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <div class="row border bg-light p-2 rounded-pill align-items-center">
+                                    <div class="col-6">
+                                        <label for="typeOfResource">Type of Renewable Resource​</label>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <select id="typeOfResource" class="custom-select form-select" name="types"
+                                            id="types">
+                                            <option value="">Select..</option>
+                                            <option value="saab">Solar Photovoltaic</option>
+                                            <option value="opel">Wind Generator</option>
+                                            <option value="audi">Bio-gas Generator</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <div class="row border bg-light p-2 rounded-pill align-items-center">
+                                    <div class="col-6">
+                                        <label for="cost">Cost of Power Bank in USD​</label>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <input id="cost" class="form-control" type="number" name="cost"
+                                            [(ngModel)]="cost">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <div class="row border bg-light p-2 rounded-pill align-items-center">
+                                    <div class="col-6">
+                                        <label for="startDate">Timeline​</label>
+
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="date" id="startDate" class="form-control w-50 rounded-pill"
+                                            name="timeline" [(ngModel)]="timeline">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-2 mb-3">
+                                <button type="submit" class="btn" data-bs-dismiss="modal"
+                                    style="background-color: #3d5fc6;color:#fff" data-bs-toggle="modal"
+                                    data-bs-target="#confirmation-msg" (click)="confirmBuy()">Buy</button>
+                                <button type="button" class="btn btn-secondary ms-2"
+                                    data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-<p style="text-align: center;padding: 10px;">
-    Dear User, A set of "<strong>{{quantity}}</strong>"  with a capacity of "<strong>{{capacity}} kW</strong>" has been added into your account with a Child contract ID" Generate child contract ID (2324-AA)"
+            <!-- <form>
+                <div class="mb-1">
+                    <div class="row border bg-light p-2 rounded-pill align-items-center">
+                        <div class="col-6">
+                            <label for="powerbanks">Number of Power Banks</label>
+                        </div>
+                        <div class="col-6">
+                            <input id="powerbanks" class="arrows" type="number" name="points" step=""
+                                [(ngModel)]="quantity">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <div class="row border bg-light p-2 rounded-pill align-items-center">
+                        <div class="col-6">
+                            <label for="capacity">Capacity of Power Bank in kW​</label>
 
-</p>
-<button type="button"  class="btn" data-dismiss="modal" style="margin: auto;margin-bottom: 10px;" (click)="eraseForm()" >OK</button>
+                        </div>
+                        <div class="col-6">
+                            <input id="capacity" type="number" name="capacity" [(ngModel)]="capacity">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <div class="row border bg-light p-2 rounded-pill align-items-center">
+                        <div class="col-6">
+                            <label for="typeOfResource">Type of Renewable Resource​</label>
+
+                        </div>
+                        <div class="col-4">
+                            <select id="typeOfResource" class="custom-select" name="types" id="types">
+                                <option value="">Select..</option>
+                                <option value="saab">Solar Photovoltaic</option>
+                                <option value="opel">Wind Generator</option>
+                                <option value="audi">Bio-gas Generator</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <div class="row border bg-light p-2 rounded-pill align-items-center">
+                        <div class="col-6">
+                            <label for="cost">Cost of Power Bank in USD​</label>
+
+                        </div>
+                        <div class="col-6">
+                            <input id="cost" type="number" name="cost" [(ngModel)]="cost">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <div class="row border bg-light p-2 rounded-pill align-items-center">
+                        <div class="col-6">
+                            <label for="startDate">Timeline​</label>
+
+                        </div>
+                        <div class="col-6">
+                            <input type="date" id="startDate" class="form-control w-50 rounded-pill" name="timeline"
+                                [(ngModel)]="timeline">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="justify-content: center;">
+                    <button type="submit" class="btn" data-bs-dismiss="modal"
+                        style="background-color: #3d5fc6;color:#fff" data-bs-toggle="modal"
+                        data-bs-target="#confirmation-msg" (click)="confirmBuy()">Buy</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form> -->
+        </div>
+    </div>
 </div>
 
-</div>
+
+
+<div class="modal fade" id="confirmation-msg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class=" modal-header">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <p style="text-align: center;padding: 10px;">
+                Dear User, A set of "<strong>{{quantity}}</strong>" power banks with a capacity of "<strong>{{capacity}}
+                    kW</strong>" has been added into your account with a Child contract ID" Generate child contract ID
+                (2324-AA)"
+
+            </p>
+            <button type="button" class="btn" data-bs-dismiss="modal" style="margin: auto;margin-bottom: 10px;"
+                (click)="eraseForm()">OK</button>
+        </div>
+
+    </div>
 </div>

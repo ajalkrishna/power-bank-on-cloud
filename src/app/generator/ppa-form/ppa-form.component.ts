@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'
 import { UtilityService } from 'src/app/utility.service';
+import { GeneratorService } from '../generator.service';
 
 @Component({
   selector: 'app-ppa-form',
@@ -9,13 +10,14 @@ import { UtilityService } from 'src/app/utility.service';
 })
 export class PpaFormComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, public util: UtilityService) { }
+  constructor(private fb: FormBuilder, public util: UtilityService,private gen:GeneratorService) { }
   demoForm: any;
   newPpaRequest: any;
   codeOfGen:string='';
-  generators: any[];
-  chosenGenerator:any;
-  typeOfResources: any[];
+  utilities: any[];
+  chosenUtility:any;
+  typeOfResources: string[]=["Solar Photovoltaic","Wind Generator","Bio-Gas Generator"];
+  generatingSource:string;
   currentDate:string="2022-11-29";
   startDate:string="2027-12-31";
   endDate:string="2033-12-31"
@@ -37,8 +39,8 @@ export class PpaFormComponent implements OnInit {
       // requestDate: ['17/11/2022'],
     })
 
-    this.generators = this.util.getAvailableGenerators();
-    this.typeOfResources = this.util.getTypeOfResources();
+    this.utilities = this.gen.utilityData;
+    // this.typeOfResources = this.util.getTypeOfResources();
 
     
 
@@ -50,15 +52,19 @@ export class PpaFormComponent implements OnInit {
   submit(formRef) {
   
     let response = this.newPpaRequest.value;
-    response.utilityName="Genarator 3";
-    response.utilityId = "ME88";
-    response.generatorName=this.chosenGenerator.generatorName;
-    response.generatorCode=this.chosenGenerator.generatorCode;
-    response.generatingSource=this.chosenGenerator.generatingSource;
+    response.utilityName=this.chosenUtility.powerUtility;
+    response.utilityId = this.chosenUtility.utilityCode;
+    response.generatorName="Genarator 6";
+    response.generatorCode="ME88";
+    response.generatingSource=this.generatingSource;
     response.requestDate=this.currentDate;
-    this.util.newPpaRequest.next(response)
+    // this.util.newPpaRequest.next(response)
+    response.status='requested';
     this.codeOfGen=''
     // formRef.reset()
+    console.log(response);
+    this.gen.newPpaFromGenerator.next(response);
+    
     this.newPpaRequest.reset()
     
   }
@@ -67,16 +73,11 @@ export class PpaFormComponent implements OnInit {
     // console.log(e.target.value);
     let keyword = e.target.value;
     if (keyword == "Select") {
-      this.generators=this.util.getAvailableGenerators();
-      this.typeOfResources = [];
-      this.typeOfResources = this.util.getTypeOfResources();
+      this.utilities=this.gen.utilityData;;
       this.codeOfGen='';
     }else{
-      this.chosenGenerator = this.generators.find((gen) => gen.generatorName == keyword);
-      // console.log(this.chosenGenerator);
-      this.codeOfGen=this.chosenGenerator.generatorCode;
-      this.typeOfResources = [];
-      this.typeOfResources.push(this.chosenGenerator.generatingSource);
+      this.chosenUtility = this.utilities.find((gen) => gen.utilityCode == keyword);
+      this.codeOfGen=this.chosenUtility.utilityCode;
     }
 
     
@@ -85,17 +86,13 @@ export class PpaFormComponent implements OnInit {
   chooseType(e) {
     // console.log(e.target.value);
     let keyword = e.target.value
-    let generatorList = this.util.getAvailableGenerators();
-    if (keyword == "Select...") {
-      this.generators = generatorList;
-    } else {
-      this.generators = generatorList.filter((gen) => gen.generatingSource == keyword);
-    }
+    this.generatingSource=keyword;
+    
 
   }
 
-  findChosenGenerator(code){
-    return this.generators.find((gen)=>gen.generatorCode==code)
-  }
+  // findChosenGenerator(code){
+  //   return this.generators.find((gen)=>gen.generatorCode==code)
+  // }
 
 }
