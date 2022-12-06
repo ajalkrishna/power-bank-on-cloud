@@ -21,20 +21,7 @@ export class GeneratorService {
     status: ''
   });
   ppaTableUpdate = new BehaviorSubject(null)
-  // newPpaFromGenerator= new BehaviorSubject({
-  //   generatorName: 'Test',
-  //   generatorCode: '123',
-  //   generatingSource: '11',
-  //   utilityName: '222',
-  //   utilityId: '222',
-  //   capacityRequested: 22,
-  //   startDate: '222',
-  //   validity: '222',
-  //   fixedCost: 22,
-  //   variableCost: 22,
-  //   requestDate: '2222',
-  //   status: 'requested'
-  // });
+
   newContractFromUtility= new BehaviorSubject(null)
 
   utilityInExecution:any[]=[

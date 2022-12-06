@@ -27,24 +27,15 @@ export class PpaFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.newPpaRequest = this.fb.group({
-      // utilityName: ['TATA Power'],
-      // utilityId: ['ACD231'],
-      // generatorName: [''],
-      // generatorCode: [''],
       capacityRequested: ['',[Validators.required,Validators.min(10),Validators.max(1000)]],
       startDate: [''],
       validity: [''],
       fixedCost: ['',[Validators.required,Validators.min(1),Validators.max(20)]],
       variableCost: ['',[Validators.required,Validators.min(0.01),Validators.max(2)]],
-      // requestDate: ['17/11/2022'],
     })
 
     this.utilities = this.gen.utilityData;
-    // this.typeOfResources = this.util.getTypeOfResources();
-
-    
-
-  }
+}
 
   get capacityRequested() { return this.newPpaRequest.get('capacityRequested') }
   get fixedCost() { return this.newPpaRequest.get('fixedCost') }
@@ -70,7 +61,6 @@ export class PpaFormComponent implements OnInit {
   }
 
   chooseGenerator(e) {
-    // console.log(e.target.value);
     let keyword = e.target.value;
     if (keyword == "Select") {
       this.utilities=this.gen.utilityData;;
@@ -80,19 +70,12 @@ export class PpaFormComponent implements OnInit {
       this.codeOfGen=this.chosenUtility.utilityCode;
     }
 
-    
 
   }
   chooseType(e) {
-    // console.log(e.target.value);
     let keyword = e.target.value
     this.generatingSource=keyword;
     
 
   }
-
-  // findChosenGenerator(code){
-  //   return this.generators.find((gen)=>gen.generatorCode==code)
-  // }
-
 }

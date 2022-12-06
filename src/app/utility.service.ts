@@ -25,20 +25,6 @@ export class UtilityService {
     requestDate: '',
     status: ''
   })
-  // newPpaRequest = new BehaviorSubject({
-  //   generatorName: '22',
-  //   generatorCode: '22',
-  //   generatingSource: '22',
-  //   utilityName: '22',
-  //   utilityId: '22',
-  //   capacityRequested: 20,
-  //   startDate: '222',
-  //   validity: '22',
-  //   fixedCost: 20,
-  //   variableCost: 20,
-  //   requestDate: '22',
-  //   status: 'requested'
-  // })
   newPbSpecification = new BehaviorSubject({
     contractId: '',
     qtyOfPowebank: '',
@@ -260,6 +246,5 @@ export class UtilityService {
   updateInExcecutionTable(newPpa) {
 
     this.inExcecutionGenerators.unshift(newPpa)
-    // this.availableGenerators.unshift(newPpa)
   }
 }

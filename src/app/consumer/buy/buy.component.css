@@ -43,3 +43,8 @@ td{
   background-color: white;
   color: red;
 }
+.btn-close{
+  border: 1px solid red;
+  background-color: white;
+  color: red;
+}

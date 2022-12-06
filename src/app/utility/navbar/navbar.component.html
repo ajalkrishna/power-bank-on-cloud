@@ -48,13 +48,13 @@
           <div class="modal-body">
             <div *ngIf="this.util.newContract.getValue().status=='approved'">
               <p>New PPA contract has been approved by <span class="fw-bold">{{newPpa.generatorName}}</span> with a
-                contract id <span class="fw-bold">{{newPpa.contractId}}</span> for the capacity of <span class="fw-bold">{{newPpa.quantity}}kW.</span></p>
+                contract ID <span class="fw-bold">{{newPpa.contractId}}</span> for the capacity of <span class="fw-bold">{{newPpa.quantity}}kW.</span></p>
               <button class="btn btn-primary d-block mx-auto" (click)="confirmApproval()"
                 data-bs-dismiss="modal">OK</button>
             </div>
 
             <div *ngIf="this.util.newContract.getValue().status==''">
-              <p class="text-center">No new active ppa requests!!</p>
+              <p class="text-center">No new active PPA requests!!</p>
               <button class="btn btn-primary d-block mx-auto" data-bs-dismiss="modal">OK</button>
             </div>
           </div>
@@ -81,7 +81,7 @@
             </div>
 
             <div *ngIf="this.gen.newPpaFromGenerator.getValue().status==''">
-              <p class="text-center">No new active ppa requests!!</p>
+              <p class="text-center">No new active PPA requests!!</p>
               <button class="btn btn-primary d-block mx-auto" data-bs-dismiss="modal">OK</button>
             </div>
           </div>

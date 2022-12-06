@@ -35,7 +35,7 @@ export class PpaApprovalUtilityComponent implements OnInit {
 
   approvePpa(){
     let contract ={
-      contractId: 9090,
+      contractId: 8080,
       generatorName: this.ppaRequest.generatorName,
       retailer:this.ppaRequest.utilityName,
       quantity: this.ppaRequest.capacityRequested,

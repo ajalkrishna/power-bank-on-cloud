@@ -1,4 +1,3 @@
-<!-- <h5 class="mx-auto text-center border p-2 heading">Create a New "Power Purchase Agreement (PPA)" ​</h5> -->
 <div class="container">
     <form [formGroup]="newPpaRequest" (ngSubmit)="this.newPpaRequest.valid && submit(formRef)" #formRef="ngForm">
         <!-- powergenerator -->
@@ -82,19 +81,6 @@
                         [min]="currentDate" [max]="startDate">
                 </div>
             </div>
-            <!-- <div class="row border bg-light p-1 rounded-pill">
-                <div class="col-12">
-                    <div class="row startDateOfPpa">
-                        <div class="col-6">
-                            <label for="startDate">Commencement of Power from​</label>
-                        </div>
-                        <div class="col-3">
-                            <input type="date" formControlName="startDate" id="startDate"
-                                class="form-control rounded-pill" [min]="currentDate" [max]="startDate">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
         <!-- validity -->
@@ -109,17 +95,6 @@
                         [min]="currentDate" [max]="endDate">
                 </div>
             </div>
-            <!-- <div class="row border bg-light p-2 rounded-pill">
-                <div class="col-9">
-                    <div class="row validityOfpa">
-                        <div class="col-8">
-                        </div>
-                        <div class="col-4">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
 
         <!-- cost -->
@@ -168,20 +143,13 @@
         <div class="d-flex">
             <input type="checkbox" name="confirm" id="confirm" class="form-check-input"
                 (input)="termsAndConditions($event)">
-            <label class="ms-2">I agree to the <a href="http://localhost:4200/ppa-terms&conditions" target="_blank"> terms & condition</a>​</label>
+            <label class="ms-2">I agree to the <a href="http://localhost:4200/ppa-terms&conditions" target="_blank">
+                    terms & condition</a>​</label>
         </div>
-        
 
-        <!-- submit Button -->
-        <!-- <button type="submit" class="btn btn-secondary d-block mx-auto" data-bs-toggle="modal"
-            data-bs-target="#ppa_confirm" [disabled]="this.newPpaRequest.invalid && this.checked">Request For
-            PPA</button> -->
-        <!-- <img src="../../../assets/images/rppa.svg" type="submit" role="button" alt="" class="d-block mx-auto" width="200px" data-bs-toggle="modal"
-            data-bs-target="#ppa_confirm"> -->
+
         <button type="submit" class="d-block mx-auto"><img src="../../../assets/images/rppa.svg" type="submit"
                 role="button" alt="" width="200px" data-bs-toggle="modal" data-bs-target="#ppa_confirm"></button>
-        <!-- <button type="button" data-bs-toggle="modal"
-        data-bs-target="#ppa_confirm" class="btn btn-secondary d-block mx-auto">Request For PPA</button> -->
     </form>
 
 

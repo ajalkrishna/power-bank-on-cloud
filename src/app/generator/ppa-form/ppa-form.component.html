@@ -1,4 +1,3 @@
-<!-- <h5 class="mx-auto text-center border p-2 heading">Create a New "Power Purchase Agreement (PPA)" ​</h5> -->
 <div class="container">
     <form [formGroup]="newPpaRequest" (ngSubmit)="this.newPpaRequest.valid && submit(formRef)" #formRef="ngForm">
         <!-- powergenerator -->
@@ -149,7 +148,6 @@
         <button type="submit" class="btn d-block mx-auto" data-bs-toggle="modal"
             data-bs-target="#ppa_confirm" [disabled]="this.newPpaRequest.invalid">Request For
             PPA</button>
-        <!-- <button type="submit" class="btn btn-secondary d-block mx-auto">Request For PPA</button> -->
     </form>
 
 
