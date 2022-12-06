@@ -28,44 +28,44 @@ export class GeneratorService {
     {
       contractId: 1789,
       retailer: "Utility B",
-      quantity: "200 kW",
+      quantity: "200",
       timeline: "1st Dec '22-28th Feb '23",
       status:"approved"
     },
     {
       contractId: 2156,
       retailer: "Utility P",
-      quantity: "500 kW",
+      quantity: "500",
       timeline: "1st Nov '22-31st Jan '23"
     },
     {
       contractId: 1654,
       retailer: "Utility D",
-      quantity: "220 kW",
+      quantity: "220",
       timeline: "1st Nov '22-31st Jan '23"
     },
     {
       contractId: 2212,
       retailer: "Utility B",
-      quantity: "360 kW",
+      quantity: "360",
       timeline: "1st Nov-31st Jan"
     },
     {
       contractId: 2324,
       retailer: "Utility A",
-      quantity: "490 kW",
+      quantity: "490",
       timeline: "1st Oct-31st Dec"
     },
     {
       contractId: 9784,
       retailer: "Utility E",
-      quantity: "400 kW",
+      quantity: "400",
       timeline: "1st Oct-31st Dec"
     },
     {
       contractId: 4521,
       retailer: "Utility F",
-      quantity: "325 kW",
+      quantity: "325",
       timeline: "1st Oct-31st Dec"
     }
   ]

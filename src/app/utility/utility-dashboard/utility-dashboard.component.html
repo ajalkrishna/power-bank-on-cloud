@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <div class="utility">
     <div class="row mb-4 mt-3">
-        <div class="col-3 ">
-            <div class="row pb_stat pb_statistics justify-content-center ps-3 pe-3">
+        <div class="col-3 border-end">
+            <div class="row pb_stat pb_statistics justify-content-center ps-3 pe-3 border-bottom pb-3">
                 <h5 class="text-center mb-2 heading">Power Bank Statistics</h5>
 
                 <div class="row box align-items-center justify-content-center">
@@ -36,15 +36,16 @@
 
 
             </div>
-            <div class="row">
+            
+            <div class="row mt-4">
                 <app-my-generators></app-my-generators>
             </div>
 
 
         </div>
         <div class="col-9">
-            <div class="row revenue">
-                <div class="col-5">
+            <div class="row revenue border-bottom pb-4">
+                <div class="col-5 border-end">
                     <h5 class="text-center heading">Load Management for EV (MW) 2022</h5>
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -70,7 +71,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-5 border-end">
                     <h5 class="text-center heading">Revenue (USD) for 2022</h5>
                     <div class="bar-template">
                         <div class="revenue-q1">
@@ -101,13 +102,14 @@
                 </div>
                 <div class="col-2">
                     <div class="row">
-                        <img src="../../assets/ppa-button.svg" alt="" data-bs-toggle="modal" data-bs-target="#createPPA">
+                        <img src="../../assets/ppa-button.png" alt="" data-bs-toggle="modal" data-bs-target="#createPPA">
                     </div>
                     <div class="row">
-                        <img src="../../assets/pb_button.svg" alt="" data-bs-toggle="modal" data-bs-target="#create_power_bank">
+                        <img src="../../assets/pb_button.png" alt="" data-bs-toggle="modal" data-bs-target="#create_power_bank">
                     </div>
                 </div>
             </div>
+            <!-- <hr class="mt-4"> -->
             <app-ppa-table></app-ppa-table>
 
         </div>

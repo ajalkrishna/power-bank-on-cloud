@@ -10,11 +10,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <!-- <li class="nav-item">
-          <a class="nav-link notify" data-bs-toggle="modal" data-bs-target="#exampleModal">Notifications <span
-              id="warning"><img *ngIf="this.util.newContract.getValue().status=='approved'"
-                src="../../../assets/images/warning.png" width="12x" alt=""></span></a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link fw-bold">Welcome Utility C</a>
         </li>
@@ -48,7 +43,7 @@
           <div class="modal-body">
             <div *ngIf="this.util.newContract.getValue().status=='approved'">
               <p>New PPA contract has been approved by <span class="fw-bold">{{newPpa.generatorName}}</span> with a
-                contract ID <span class="fw-bold">{{newPpa.contractId}}</span> for the capacity of <span class="fw-bold">{{newPpa.quantity}}kW.</span></p>
+                transaction ID <span class="fw-bold">{{newPpa.contractId}}</span> for the capacity of <span class="fw-bold">{{newPpa.quantity}}kW.</span></p>
               <button class="btn btn-primary d-block mx-auto" (click)="confirmApproval()"
                 data-bs-dismiss="modal">OK</button>
             </div>
@@ -67,10 +62,6 @@
         <div class="modal-content">
           <div class="modal-body">
             <div *ngIf="this.gen.newPpaFromGenerator.getValue().status=='requested'">
-              <!-- <p>New PPA contract has been approved by <span class="fw-bold">{{newPpa.generatorName}}</span> with a
-                contract id <span class="fw-bold">{{newPpa.contractId}}</span></p>
-              <button class="btn btn-primary d-block mx-auto" (click)="confirmApproval()"
-                data-bs-dismiss="modal">OK</button> -->
                 <div class="d-flex align-items-center mb-2">
                   <h5 class="heading text-center">Request for "New Power Purchase Agreement (PPA)" ​</h5>
 

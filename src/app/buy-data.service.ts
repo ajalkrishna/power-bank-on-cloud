@@ -23,6 +23,18 @@ export class BuyDataService {
       quantity: 2,
       validity: 15,
       endDate: "2022-07-19"
+    },
+    {
+      cost: 0.85,
+      quantity: 3,
+      validity: 20,
+      endDate: "2022-06-23"
+    },
+    {
+      cost: 0.85,
+      quantity: 3,
+      validity: 20,
+      endDate: "2022-06-23"
     }
   ]
 

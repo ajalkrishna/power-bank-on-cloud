@@ -20,7 +20,7 @@ export class CurrentMarketComponent implements OnInit {
 
   ngOnInit(): void {
     this.utilityMarket=this.gen.utilityMarket;
-    this.executionArray = this.utilityMarket.slice(0, 3);
+    this.executionArray = this.utilityMarket.slice(0, 4);
   
   }
   showMoreInExecution(event: PageChangedEvent): void {

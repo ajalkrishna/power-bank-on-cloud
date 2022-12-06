@@ -61,22 +61,15 @@ top:5%;
     box-shadow: 0 8px 8px -4px grey;
 }
   .bill-box{
-    border: 4px solid #3d5fc6;
-    width: fit-content;
-    height: fit-content;
-    padding: 5px;
-    border-radius: 5px;
+    /* width: fit-content;
+    height: fit-content; */
+    padding: 15px;
+    /* border-radius: 5px; */
     background: #eee;
-box-shadow: 0 8px 8px -4px grey;
-/* background-image: linear-gradient(to right, indigo, violet); */
-/* background-color: #0093E9; */
-/* background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); */
+/* box-shadow: 0 8px 8px -4px grey; */
 }
 .canvas{
-    background: #eee;
-    box-shadow: 0 8px 8px -4px grey;
-    border: 2px solid #3d5fc6;
-    border-radius: 5px;
+    /* border: 1px solid #000000; */
 }
 .bill-box .row{
     display: inline-block;
@@ -92,15 +85,7 @@ box-shadow: 0 8px 8px -4px grey;
 margin: 5px 30px;
 } */
 
-.power-bank-table thead{
-    font-size: 12px;
-}
-.power-bank-table tbody{
-    font-size:12px
-}
-.power-bank-table tr td{
-    padding: 15px ;
-}
+
 .box1-flex{
     display: flex;
 }
@@ -201,7 +186,7 @@ letter-spacing: 10px;
 }
 .requirement_calc{
     background-color: #eee;
-    box-shadow: 0 8px 8px -4px grey;
+    box-shadow: 0 8px 8px -4px rgba(128, 128, 128, 0.352);
 }
 .my-pagination::ng-deep .page-item .page-link {
     z-index: 1;
@@ -225,4 +210,32 @@ letter-spacing: 10px;
     border: none;
     color: red;
     font-weight: bold;
+}
+.withSpace{
+    margin-top: 3rem;
+}
+.withoutSpace{
+    margin-top: 0rem;
+}
+.power-bank-table td{
+    font-size: 0.8rem;
+    padding: 12px 0px;
+}
+.final_btn .btn{
+    border-radius: 0;
+    box-shadow: none;
+}
+.heading{
+    background-color: darkblue;
+    color: rgb(255, 255, 255);
+    padding: 0.3rem 0.8rem;
+
+}
+
+.ok_btn{
+    border-radius: 0;
+    color: white;
+    display: block;
+    margin: auto;
+    background-color: #330ae1;
 }

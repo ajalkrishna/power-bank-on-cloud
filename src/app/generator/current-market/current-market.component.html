@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col">
         <h5 class="text-center heading">Current Market</h5>
-        <table class="table table-borderless table-striped">
+        <table class="table table-bordered table-striped">
             <thead>
                 <tr class="text-center">
                     <th scope="col">Power Banks</th>
@@ -24,7 +24,7 @@
         </table>
         <div class="page-btn w-100 d-flex justify-content-end">
             <pagination class="my-pagination" [totalItems]="utilityMarket.length" [directionLinks]="false"
-                    (pageChanged)="showMoreInExecution($event)" [itemsPerPage]="3"></pagination>
+                    (pageChanged)="showMoreInExecution($event)" [itemsPerPage]="4"></pagination>
         </div>
     </div>
 </div>

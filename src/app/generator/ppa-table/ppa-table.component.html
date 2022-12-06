@@ -1,5 +1,5 @@
-<div class="row mt-2">
-    <div class="col-6">
+<div class="row mt-4">
+    <div class="col-6 border-end">
         <h5 class="text-center heading">PPA- In Execution</h5>
         <table class="table table-bordered table-striped">
             <thead>
@@ -11,7 +11,6 @@
                 </tr>
             </thead>
             <tbody class="inExcecution">
-                <!-- <tr *ngFor="let each of executionArray" class="text-center"> -->
                 <tr *ngFor="let each of this.gen.ppaTableUpdate.getValue();let i=index" class="text-center" [ngStyle]="{'background-color': each.status=='approved' && i==0 ? 'yellow' : 'white' }">
                     <td>{{each.contractId}}</td>
                     <td>{{each.retailer}}</td>

@@ -1,10 +1,9 @@
 <app-navbar></app-navbar>
 <div class="utility">
-    <div class="row mb-4 mt-3">
-        <div class="col-3">
+    <div class="row  mb-4 mt-3">
+        <div class="col-3 border-end">
             <h5 class="text-center heading">My Capacity</h5>
-
-            <div class="row pb_stat justify-content-center ps-3 pe-3 ">
+            <div class="row pb_stat justify-content-center ps-3 pe-3 pb-4">
                 <div class="col">
                     <div class="row capacity_box align-items-center mb-2">
                         <div class="col">
@@ -13,7 +12,7 @@
                                     Installed Capacity
                                 </div>
                                 <div class="col-5 cBody">
-                                    10MW
+                                    7.5MW
                                 </div>
                             </div>
 
@@ -22,7 +21,7 @@
                                     Availability Factor
                                 </div>
                                 <div class="col-5 cBody">
-                                    7.8MW <sub>(approx.)</sub>
+                                    22.1%<sub>(approx.)</sub>
                                 </div>
                             </div>
 
@@ -31,14 +30,14 @@
 
                     </div>
 
-                    <div class="row box align-items-center mb-2">
+                    <div class="row box align-items-center mb-2 ">
                         <div class="col-3 circle">
                             <img src="../../assets/solar-panel.png" alt="no image found" width="35px" class=" mb-1">
                         </div>
                         <div class="col-9 ps-3 pt-2 pe-2">
                             <h5>Site 1</h5>
                             <h6>Installed Capacity: 5MW</h6>
-                            <h6>Availability Factor: 4.2MW</h6>
+                            <h6>Availability Factor: 22.2%</h6>
                         </div>
                     </div>
 
@@ -49,11 +48,11 @@
                         <div class="col-9 ps-3 pt-2 pe-2">
                             <h5>Site 2</h5>
                             <h6>Installed Capacity: 2.5MW</h6>
-                            <h6>Availability Factor: 1.8MW</h6>
+                            <h6>Availability Factor: 22%</h6>
                         </div>
                     </div>
 
-                    <div class="row box align-items-center mb-2">
+                    <!-- <div class="row box align-items-center mb-2">
                         <div class="col-3 circle">
                             <img src="../../assets/solar-panel.png" alt="no image found" width="35px" class=" mb-1">
                         </div>
@@ -62,21 +61,16 @@
                             <h6>Installed Capacity: 2.5MW</h6>
                             <h6>Availability Factor: 1.8MW</h6>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-
-
-
-
             </div>
-            <div class="row">
+            <div class="row border-top generatorPart">
                 <app-my-generators></app-my-generators>
             </div>
-
         </div>
-        <div class="col-9">
-            <div class="row revenue">
-                <div class="col-5">
+        <div class="col-9 ">
+            <div class="row revenue border-bottom">
+                <div class="col-5 border-end">
                     <h5 class="text-center heading">Market Summary</h5>
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -101,60 +95,24 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <!-- <div id="chartContainer" class="w-100"></div> -->
-                    <!-- <img src="../../../assets/images/market-curve.png" class="w-100" alt=""> -->
 
                 </div>
-                <div class="col-5">
-                    <!-- <h5 class="text-center heading">Revenue (USD) for 2022</h5>
-                    <div class="bar-template">
-                        <div class="revenue-q1">
-                            <p>2985</p>
-                            <div class="q1"></div>
-                            <hr>
-                            <h6 class="base">Quarter 1</h6>
-                        </div>
-                        <div class="revenue-q2">
-                            <p>3056</p>
-                            <div class="q2"></div>
-                            <hr>
-                            <h6 class="base">Quarter 2</h6>
-                        </div>
-                        <div class="revenue-q3">
-                            <p>3176</p>
-                            <div class="q3"></div>
-                            <hr>
-                            <h6 class="base">Quarter 3</h6>
-                        </div>
-                        <div class="revenue-q4">
-                            <p>3097</p>
-                            <div class="q4"></div>
-                            <hr>
-                            <h6 class="base">Quarter 4</h6>
-                        </div>
-                    </div> -->
+                <div class="col-5 border-end">
                     <app-current-market></app-current-market>
                 </div>
                 <div class="col-2">
                     <div class="row">
-                        <!-- <div class="config_button mb-2 p-2" data-bs-toggle="modal" data-bs-target="#createPPA">
-                            <img src="../../assets/Picture5.svg" class="d-block mx-auto" alt="no image found"
-                                width="50px">
-                            <p class="text-center text-white config_pa_text">Create New PPA</p>
-                        </div> -->
-                        <img src="../../assets/ppa-button.svg" alt="" data-bs-toggle="modal"
+                        <img src="../../../assets/ppa-button.png" alt="" data-bs-toggle="modal"
                             data-bs-target="#createPPA">
                     </div>
                     <div class="row">
                         <div class="col ppa_approve">
-                            <img src="../../../assets/images/rpa.svg" alt="" data-bs-toggle="modal" class="w-100"
+                            <img src="../../../assets/rpa.png" alt="" data-bs-toggle="modal" class="w-100"
                                 data-bs-target="#create_power_bank">
                             <img *ngIf="this.util.newPpaRequest.getValue().status=='requested'"
                                 src="../../../assets/images/warning.png" alt="" class="warning" width="20px"
                                 height="20px">
                         </div>
-
-
                     </div>
                 </div>
             </div>
