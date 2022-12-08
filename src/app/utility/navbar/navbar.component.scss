@@ -34,3 +34,21 @@
     background-color: white;
     color: red;
 }
+#navbarSupportedContent {
+    .navbar-nav {
+      .dropdown-menu {
+        left: -45px;
+        padding: 0;
+  
+        li:hover, li:focus {
+          background-color: rgb(36, 28, 117);
+          color: #fff;
+          font-weight: 600;
+  
+          a {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+  }
